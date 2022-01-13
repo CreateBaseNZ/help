@@ -3,7 +3,7 @@
 .container {
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -22,7 +22,7 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -34,7 +34,7 @@
 
 .nav {
   opacity: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   display: flex;
