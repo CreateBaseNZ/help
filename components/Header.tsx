@@ -3,9 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import NavMobile from "./NavMobile";
 import classes from "./Header.module.scss";
-import { NAV_LINKS } from "../constants/nav";
 import BorderButton from "./BorderButton";
 import { useRouter } from "next/router";
+import CATEGORIES from "../constants/categories";
 
 const Header = (): JSX.Element => {
   const router = useRouter();
@@ -24,14 +24,14 @@ const Header = (): JSX.Element => {
         </a>
       </Link>
       <nav className={classes.nav}>
-        {NAV_LINKS.map((link) => (
-          <Link key={link.url} href={link.url}>
+        {CATEGORIES.map((category) => (
+          <Link key={category.url} href={category.url}>
             <a
               className={`${classes.link} ${
-                router.asPath === link.url ? classes.active : ""
+                router.asPath === category.url ? classes.active : ""
               }`}
             >
-              {link.label}
+              {category.label}
             </a>
           </Link>
         ))}

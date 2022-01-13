@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-import { NAV_LINKS } from "../constants/nav";
+import CATEGORIES from "../constants/categories";
 import RESOURCES from "../resources/resources";
 import BorderButton from "./BorderButton";
 import classes from "./NavMobile.module.scss";
@@ -30,11 +30,11 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
           </i>
         </button>
         <div className={classes.wrapper}>
-          {NAV_LINKS.map((link) => (
-            <Link key={link.url} href={link.url}>
-              <a className={classes.link} title={link.label}>
-                <i className="material-icons-outlined">{link.icon}</i>
-                {link.label}
+          {CATEGORIES.map((category) => (
+            <Link key={category.url} href={category.url}>
+              <a className={classes.link} title={category.label}>
+                <i className="material-icons-outlined">{category.icon}</i>
+                {category.label}
               </a>
             </Link>
           ))}

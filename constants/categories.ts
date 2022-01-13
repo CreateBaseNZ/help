@@ -1,10 +1,10 @@
-type NavLink = {
+type Category = {
   label: string;
   icon: string;
   url: string;
 };
 
-export const NAV_LINKS: NavLink[] = [
+const CATEGORIES: Category[] = [
   {
     label: "Managing groups & classes",
     icon: "groups",
@@ -21,3 +21,5 @@ export const NAV_LINKS: NavLink[] = [
     url: "/privacy-&-security",
   },
 ];
+
+export default CATEGORIES;
