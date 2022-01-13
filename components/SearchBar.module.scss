@@ -25,6 +25,9 @@
       color: $light;
       font-weight: 400;
     }
+    &:hover ~ i {
+      color: $logo-mid;
+    }
     &:focus {
       border-color: $logo-mid;
       background: white;

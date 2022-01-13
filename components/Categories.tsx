@@ -19,14 +19,20 @@ const Categories = () => {
             </h3>
             {category.articles.map((article) => (
               <Link key={article.url} href={`${category.url}${article.url}`}>
-                <a className={classes.article}>{article.title}</a>
+                <a className={classes.article} title={article.title}>
+                  {article.title}
+                </a>
               </Link>
             ))}
-            <BorderButton
-              label="See all articles"
-              rightIcon="arrow_forward"
-              className={classes.seeAll}
-            />
+            <Link href={category.url}>
+              <a>
+                <BorderButton
+                  label="See all articles"
+                  rightIcon="arrow_forward"
+                  className={classes.seeAll}
+                />
+              </a>
+            </Link>
           </section>
         ))}
         <div className={classes.empty} />
