@@ -24,6 +24,26 @@ body {
   position: relative;
 }
 
+body {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: rgba(black, 0.1);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(black, 0.2);
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background: rgba(black, 0.4);
+  }
+}
+
 button {
   cursor: pointer;
   font-family: $poppins;
