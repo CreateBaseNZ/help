@@ -15,7 +15,10 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
     <div
       className={`${classes.container} ${showNavMobile ? classes.show : ""}`}
     >
-      <div className={classes.overlay} />
+      <div
+        className={classes.overlay}
+        onClick={() => setShowNavMobile(false)}
+      />
       <nav className={classes.nav}>
         <button className={classes.close}>
           <i
