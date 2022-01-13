@@ -1,0 +1,10 @@
+@import "/styles/variables";
+
+.button {
+  border: 2px solid $lighter;
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: border 0.2s ease-out, color 0.2s ease-out;
+}

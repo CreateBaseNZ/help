@@ -1,0 +1,135 @@
+@import "/styles/variables";
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  &.show {
+    pointer-events: auto;
+    .overlay {
+      opacity: 1;
+    }
+    .nav {
+      opacity: 1;
+      transform: none;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(black, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.nav {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 100vh;
+  max-width: 100%;
+  transform: translateX(50%);
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.close {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-right: 1rem;
+  justify-content: flex-end;
+  i {
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: color 0.1s ease-out;
+    &:hover {
+      color: $red;
+      background: $lighter;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: color 0.1s ease-out;
+  i {
+    margin-right: 1rem;
+    color: inherit;
+    font-size: 1.25rem;
+  }
+  &:hover {
+    color: $logo-mid;
+  }
+}
+
+.subheading {
+  text-transform: uppercase;
+  color: $light;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin: 1.5rem 2rem 0.5rem 2rem;
+}
+
+.resource {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.1s ease-out;
+  i {
+    color: inherit;
+    font-size: 1rem;
+  }
+  &:hover {
+    color: $logo-mid;
+  }
+}
+
+.websiteContainer {
+  margin-top: auto;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.website {
+  height: 3rem;
+  padding: 0 1.25rem;
+  i {
+    margin-right: 0.5rem;
+    color: $blue-mid;
+    font-size: 1.5rem;
+  }
+  &:hover {
+    border-color: $blue-mid;
+    color: $blue-mid;
+  }
+}
