@@ -15,15 +15,30 @@
   flex-direction: row;
   align-items: center;
   padding: 0.5rem;
-  div {
+  .logoContainer {
+    height: 32px;
+    width: 27px;
+    position: relative;
+    transition: transform 0.2s ease-out;
+  }
+  span {
     font-size: 1.5rem;
     font-weight: 600;
     color: $darkest;
     margin-left: 1rem;
   }
+  &:hover {
+    .logoContainer {
+      transform: translateX(4px);
+    }
+  }
 }
 
-.menu {
+.nav {
+  display: none;
+}
+
+.mobileMenu {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +52,98 @@
     background: $lighter;
     i {
       color: $logo-mid;
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .mobileMenu {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .link {
+    height: 3rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.1s ease-out;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: calc(100% - 2rem);
+      height: 0;
+      background: $light;
+      transform: translateX(-50%);
+      transition: height 0.1s ease-out;
+    }
+    &:hover {
+      color: $logo-mid;
+      &::after {
+        height: 2px;
+      }
+    }
+    &.active::after {
+      height: 2px;
+      background: $logo-mid;
+    }
+  }
+
+  .subdomain {
+    height: 3rem;
+    padding: 0 1rem;
+    margin: 0 0.5rem;
+    i {
+      font-size: 1.25rem;
+    }
+    span {
+      display: none;
+    }
+    &.website {
+      i {
+        color: $blue-mid;
+      }
+      &:hover {
+        border-color: $blue-mid;
+      }
+    }
+    &.app {
+      i {
+        color: $logo-mid;
+      }
+      &:hover {
+        border-color: $logo-mid;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1225px) {
+  .header {
+    padding: 0 2rem;
+    height: 6rem;
+  }
+  .link {
+    margin: 0 0.25rem;
+  }
+  .subdomain {
+    font-size: 14px;
+    font-weight: 500;
+    span {
+      margin-left: 0.5rem;
+      display: block;
+    }
+    &.website {
+      margin-left: 2rem;
     }
   }
 }

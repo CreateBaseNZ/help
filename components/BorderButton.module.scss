@@ -6,5 +6,11 @@
   align-items: center;
   border-radius: 9999px;
   font-weight: 600;
-  transition: border 0.2s ease-out, color 0.2s ease-out;
+  transition: border 0.2s ease-out;
+  span {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    transition: color 0.2s ease-out;
+  }
 }

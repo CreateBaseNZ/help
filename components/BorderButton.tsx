@@ -10,7 +10,7 @@ const BorderButton = ({ className, icon, label }: Props): JSX.Element => {
   return (
     <button className={`${classes.button} ${className}`} title={label}>
       {icon && <i className="material-icons-outlined">{icon}</i>}
-      {label}
+      <span>{label}</span>
     </button>
   );
 };
