@@ -1,0 +1,12 @@
+@import "/styles/variables";
+
+.h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 1225px) {
+  .h1 {
+    font-size: 3rem;
+  }
+}

@@ -1,11 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import { useRef, useState } from "react";
+import Banner from "../components/Banner";
 import Header from "../components/Header";
 
 import classes from "../styles/index.module.scss";
 
 const Home: NextPage = () => {
+  const searchRef = useRef();
+  const [results, setResults] = useState(null);
+
   return (
     <div className={classes.home}>
       <Head>
@@ -17,8 +21,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-
-      {/* <main className={styles.main}></main> */}
+      <main className={classes.main}>
+        <Banner
+          searchRef={searchRef}
+          results={results}
+          setResults={setResults}
+        />
+      </main>
 
       {/* <footer className={styles.footer}>
         <a

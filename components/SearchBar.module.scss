@@ -1,0 +1,66 @@
+@import "/styles/variables";
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  width: 5rem;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  input {
+    padding-left: 2.75rem;
+    height: 100%;
+    width: 100%;
+    background: $lighter;
+    border-radius: 1rem;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    font-family: $poppins;
+    font-weight: 500;
+    border: 2px solid transparent;
+    transition: padding 0.2s ease-out, border 0.1s ease-out;
+    &::placeholder {
+      color: $light;
+      font-weight: 400;
+    }
+    &:focus {
+      border-color: $logo-mid;
+      background: white;
+      & ~ i {
+        color: $logo-mid;
+      }
+    }
+    &:not(:placeholder-shown) {
+      padding-left: 1rem;
+      padding-right: 2.5rem;
+      & ~ .magnifyingGlass {
+        left: 0;
+        opacity: 0;
+        transform: translate(-100%, -50%);
+      }
+      & ~ .arrow {
+        opacity: 1;
+        right: 0.75rem;
+      }
+    }
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    transition: transform 0.2s ease-out, left 0.2s ease-out, right 0.2s ease-out,
+      opacity 0.2s ease-out;
+  }
+  .magnifyingGlass {
+    left: 1rem;
+    pointer-events: none;
+  }
+  .arrow {
+    right: 2rem;
+    opacity: 0;
+    cursor: pointer;
+  }
+}

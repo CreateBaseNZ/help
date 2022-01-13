@@ -1,0 +1,110 @@
+@import "/styles/variables";
+
+.container {
+  width: 100%;
+  height: 35vh;
+  max-height: 350px;
+  min-height: 250px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  &.collapse {
+    height: 200px;
+    min-height: none;
+  }
+}
+
+.wrapper {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 350px;
+  .searchBar {
+    width: 100%;
+  }
+}
+
+.shape {
+  position: absolute;
+  &::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: thin solid;
+    border-radius: inherit;
+  }
+}
+
+.red {
+  display: none;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 300px;
+  border-radius: 6rem;
+  background: rgba($orange, 0.05);
+  transform: translate(-30%, -70%) rotate(45deg);
+  &::after {
+    border-color: rgba($orange, 0.2);
+    transform: translate(2rem, -2rem);
+  }
+}
+
+.green {
+  top: 0;
+  right: 30%;
+  height: 450px;
+  width: 450px;
+  border-radius: 450px;
+  background: rgba($green-mid, 0.05);
+  transform: translate(60%, -85%);
+  &::after {
+    border-color: rgba($green-mid, 0.25);
+    transform: translate(-10%, -2%);
+  }
+}
+
+.blue {
+  display: none;
+  bottom: 0;
+  right: 0;
+  height: 350px;
+  width: 350px;
+  border-radius: 2rem;
+  background: rgba($blue-mid, 0.05);
+  transform: scaleY(150%) rotate(45deg) translate(70%, -40%);
+  &::after {
+    border-color: rgba($blue-mid, 0.25);
+    transform: translate(-1rem, -2rem);
+  }
+}
+
+.yellow {
+  left: 25%;
+  bottom: 5%;
+  height: 400px;
+  width: 200px;
+  border-radius: 4rem;
+  background: rgba($gold, 0.05);
+  transform: translate(-50%, 70%) rotate(-75deg);
+  &::after {
+    border-color: rgba($gold, 0.25);
+    transform: translate(1rem, 4rem);
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .red,
+  .blue {
+    display: block;
+  }
+}
