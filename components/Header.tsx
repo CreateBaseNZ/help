@@ -37,12 +37,12 @@ const Header = (): JSX.Element => {
         ))}
         <BorderButton
           label="Website"
-          icon="language"
+          leftIcon="language"
           className={`${classes.subdomain} ${classes.website}`}
         />
         <BorderButton
           label="App"
-          icon="launch"
+          leftIcon="launch"
           className={`${classes.subdomain} ${classes.app}`}
         />
       </nav>

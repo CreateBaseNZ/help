@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRef, useState } from "react";
 import Banner from "../components/Banner";
+import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
           results={results}
           setResults={setResults}
         />
+        <Categories />
       </main>
 
       <Footer />

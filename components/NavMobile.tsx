@@ -52,7 +52,7 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
           <BorderButton
             label="Website"
             className={classes.website}
-            icon="language"
+            leftIcon="language"
           />
         </div>
       </nav>
