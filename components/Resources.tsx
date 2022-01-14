@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination } from "swiper";
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import ImageWithAttr from "./ImageWithAttr";
 
 import RESOURCES from "../resources/resources";
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import classes from "./Resources.module.scss";
+import BorderButton from "./BorderButton";
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Navigation]);
 
 const Resources = (): JSX.Element => {
   const router = useRouter();
@@ -21,6 +22,11 @@ const Resources = (): JSX.Element => {
       <Swiper
         slidesPerView="auto"
         spaceBetween={32}
+        navigation={{
+          nextEl: `.${classes.swiperNext}`,
+          prevEl: `.${classes.swiperPrev}`,
+          disabledClass: classes.swiperNavDisabled,
+        }}
         pagination={{
           clickable: true,
           el: `.${classes.pagination}`,
@@ -57,6 +63,18 @@ const Resources = (): JSX.Element => {
           </SwiperSlide>
         ))}
         <div className={classes.pagination} />
+        <div className={classes.navigation}>
+          <BorderButton
+            className={classes.swiperPrev}
+            leftIcon="chevron_left"
+            label=""
+          />
+          <BorderButton
+            className={classes.swiperNext}
+            leftIcon="chevron_right"
+            label=""
+          />
+        </div>
       </Swiper>
     </div>
   );
