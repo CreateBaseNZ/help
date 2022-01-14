@@ -10,7 +10,7 @@ import Resources from "../components/Resources";
 import classes from "../styles/index.module.scss";
 
 const Home: NextPage = () => {
-  const searchRef = useRef();
+  const searchRef = useRef(null);
   const [results, setResults] = useState(null);
 
   return (

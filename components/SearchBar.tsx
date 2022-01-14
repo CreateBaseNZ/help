@@ -1,9 +1,10 @@
+import { RefObject, SyntheticEvent } from "react";
 import classes from "./SearchBar.module.scss";
 
 interface Props {
-  inputRef: any; // TODO
+  inputRef: RefObject<HTMLInputElement>;
   className: string;
-  submitHandler: any; // TODO
+  submitHandler: (e: SyntheticEvent) => void;
   placeholder?: string;
 }
 

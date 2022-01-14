@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
-import { SyntheticEvent } from "react";
+import { RefObject, SyntheticEvent } from "react";
 import classes from "./Banner.module.scss";
 import H1 from "./H1";
 import SearchBar from "./SearchBar";
 
 interface Props {
-  searchRef: any; // TODO
+  searchRef: RefObject<HTMLInputElement>;
   results: any; // TODO
   setResults: any; // TODO
 }
@@ -17,7 +17,7 @@ const Banner = ({ searchRef, results, setResults }: Props): JSX.Element => {
     e.preventDefault();
     router.push({
       pathname: "/",
-      query: { search: searchRef.current.value },
+      query: { search: searchRef?.current?.value },
     });
   };
 
