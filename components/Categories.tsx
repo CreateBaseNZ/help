@@ -4,13 +4,10 @@ import BorderButton from "./BorderButton";
 
 import classes from "./Categories.module.scss";
 
-const Categories = () => {
+const Categories = (): JSX.Element => {
   return (
     <div className={classes.container}>
-      <div
-        className={classes.wrapper}
-        style={{ maxWidth: `calc((250px + 10vw) * ${CATEGORIES.length})` }}
-      >
+      <div className={classes.wrapper}>
         {CATEGORIES.map((category) => (
           <section key={category.url} className={classes.category}>
             <h3>
@@ -35,9 +32,6 @@ const Categories = () => {
             </Link>
           </section>
         ))}
-        <div className={classes.empty} />
-        <div className={classes.empty} />
-        <div className={classes.empty} />
       </div>
     </div>
   );

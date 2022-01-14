@@ -5,6 +5,7 @@ import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Resources from "../components/Resources";
 
 import classes from "../styles/index.module.scss";
 
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
           setResults={setResults}
         />
         <Categories />
+        <Resources />
       </main>
 
       <Footer />

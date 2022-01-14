@@ -2,7 +2,7 @@ import Link from "next/link";
 import FOOTER_LINKS from "../constants/footer";
 import classes from "./Footer.module.scss";
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <footer className={classes.container}>
       <div className={classes.wrapper}>

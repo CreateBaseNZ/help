@@ -3,7 +3,7 @@
 .container {
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 3.5rem;
   width: 5rem;
   font-size: 14px;
   position: relative;
@@ -13,7 +13,7 @@
     height: 100%;
     width: 100%;
     background: $lighter;
-    border-radius: 1rem;
+    border-radius: 999px;
     font-size: inherit;
     font-weight: inherit;
     color: inherit;

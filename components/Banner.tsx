@@ -31,7 +31,7 @@ const Banner = ({ searchRef, results, setResults }: Props): JSX.Element => {
         <H1 string="How can we help?" />
         <form onSubmit={submitHandler} className={classes.form}>
           <SearchBar
-            ref={searchRef}
+            inputRef={searchRef}
             className={classes.searchBar}
             submitHandler={submitHandler}
             placeholder="Search"

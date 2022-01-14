@@ -1,21 +1,25 @@
 import classes from "./SearchBar.module.scss";
 
 interface Props {
-  ref: any; // TODO
+  inputRef: any; // TODO
   className: string;
   submitHandler: any; // TODO
   placeholder?: string;
 }
 
 const SearchBar = ({
-  ref,
+  inputRef,
   className,
   submitHandler,
   placeholder = " ",
 }: Props): JSX.Element => {
   return (
     <div className={`${classes.container} ${className}`}>
-      <input ref={ref} className={classes.input} placeholder={placeholder} />
+      <input
+        ref={inputRef}
+        className={classes.input}
+        placeholder={placeholder}
+      />
       <i
         className={`material-icons-outlined ${classes.magnifyingGlass}`}
         title="Search"
