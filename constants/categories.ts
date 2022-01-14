@@ -1,19 +1,6 @@
+import MANAGE_USERS_IN_YOUR_SCHOOL from "../articles/manage-users-in-your-school";
 import WHAT_ARE_GROUPS from "../articles/what-are-groups";
-import { Article } from "../types/article";
-
-export type SubCategory = {
-  title: string;
-  articles: Article[];
-};
-
-export type Category = {
-  title: string;
-  icon: string;
-  url: string;
-  description: string;
-  featured: Article[];
-  subcategories: SubCategory[];
-};
+import { Category } from "../types/categories";
 
 // TODO descriptions
 
@@ -23,11 +10,15 @@ const CATEGORIES: Category[] = [
     icon: "groups",
     url: "/managing-groups-&-classes",
     description: "",
-    featured: [WHAT_ARE_GROUPS, WHAT_ARE_GROUPS, WHAT_ARE_GROUPS],
+    featured: [WHAT_ARE_GROUPS, MANAGE_USERS_IN_YOUR_SCHOOL],
     subcategories: [
       {
         title: "Introduction to groups",
-        articles: [WHAT_ARE_GROUPS, WHAT_ARE_GROUPS, WHAT_ARE_GROUPS],
+        articles: [
+          WHAT_ARE_GROUPS,
+          MANAGE_USERS_IN_YOUR_SCHOOL,
+          WHAT_ARE_GROUPS,
+        ],
       },
       {
         title: "School groups",

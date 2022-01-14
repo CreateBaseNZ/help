@@ -1,5 +1,8 @@
+import { ReactElement } from "react";
+
 export type Article = {
   title: string;
   url: string;
-  content: JSX.Element;
+  blurb: string;
+  content: ReactElement;
 };

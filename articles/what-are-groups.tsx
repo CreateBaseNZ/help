@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Article } from "../types/article";
 
-// TODO fix this file
+// TODO fix the links
 
 const WHAT_ARE_GROUPS: Article = {
   title: "What are groups?",
-  url: "/what-are-groups?",
+  url: "/what-are-groups",
+  blurb: "Find out how groups work on the CreateBase platform",
   content: (
     <>
       <p>

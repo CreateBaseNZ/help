@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Header from "../../components/Header";
-import CATEGORIES, { Category } from "../../constants/categories";
-
-import classes from "../../styles/category.module.scss";
+import CATEGORIES from "../../constants/categories";
 import Footer from "../../components/Footer";
 import H1 from "../../components/H1";
-import Link from "next/link";
+import { Category } from "../../types/categories";
+
+import classes from "../../styles/category.module.scss";
 
 const Category: NextPage = () => {
   const router = useRouter();
@@ -23,8 +24,6 @@ const Category: NextPage = () => {
       router.push("/404");
     }
   }, [router]);
-
-  console.log("re-rendered");
 
   if (!data) return null;
 
