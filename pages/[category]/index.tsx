@@ -43,11 +43,13 @@ const Category: NextPage = () => {
         </div>
         {data.subcategories.map((subcategory) => (
           <section key={subcategory.title} className={classes.container}>
-            <h2>{subcategory.title}</h2>
+            <h2 className={classes.h2}>{subcategory.title}</h2>
             <div className={classes.wrapper}>
               {subcategory.articles.map((article) => (
                 <Link key={article.url} href={`${data.url}${article.url}`}>
-                  <a className={classes.article}>{article.title}</a>
+                  <a className={classes.article} title={article.title}>
+                    {article.title}
+                  </a>
                 </Link>
               ))}
             </div>
