@@ -64,7 +64,7 @@ const Article: NextPage = () => {
         <Crumbs
           crumbs={[
             { url: category.url, title: category.title },
-            { url: data.url, title: data.title },
+            { url: `${category.url}${data.url}`, title: data.title },
           ]}
         />
         <H1>{data.title}</H1>
