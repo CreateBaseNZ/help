@@ -38,17 +38,21 @@ const Category: NextPage = () => {
       <Header />
       <main className={classes.main}>
         <div className={classes.crumbTrail}>
-          <Link href="/">
-            <a className={classes.crumb} title="Help Center">
-              Help Center
-            </a>
-          </Link>
-          <i className="material-icons-outlined">chevron_right</i>
-          <Link href={data.url}>
-            <a className={classes.crumb} title={data.title}>
-              {data.title}
-            </a>
-          </Link>
+          <div className={classes.crumbWrapper}>
+            <Link href="/">
+              <a className={classes.crumb} title="Help Center">
+                Help Center
+              </a>
+            </Link>
+          </div>
+          <div className={classes.crumbWrapper}>
+            <i className="material-icons-outlined">chevron_right</i>
+            <Link href={data.url}>
+              <a className={classes.crumb} title={data.title}>
+                {data.title}
+              </a>
+            </Link>
+          </div>
         </div>
         <div className={classes.h1}>
           <i className="material-icons-outlined">{data.icon}</i>
