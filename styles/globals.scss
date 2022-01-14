@@ -53,6 +53,10 @@ button {
 //   display: none;
 // }
 
+.material-icons-outlined {
+  user-select: none;
+}
+
 .roundScrollbar {
   overflow-y: auto;
   &::-webkit-scrollbar {

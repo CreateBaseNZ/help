@@ -37,6 +37,19 @@ const Category: NextPage = () => {
       </Head>
       <Header />
       <main className={classes.main}>
+        <div className={classes.crumbTrail}>
+          <Link href="/">
+            <a className={classes.crumb} title="Help Center">
+              Help Center
+            </a>
+          </Link>
+          <i className="material-icons-outlined">chevron_right</i>
+          <Link href={data.url}>
+            <a className={classes.crumb} title={data.title}>
+              {data.title}
+            </a>
+          </Link>
+        </div>
         <div className={classes.h1}>
           <i className="material-icons-outlined">{data.icon}</i>
           <H1>{data.title}</H1>
