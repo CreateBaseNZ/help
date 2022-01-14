@@ -56,7 +56,10 @@ const Article: NextPage = () => {
     <div className={classes.page}>
       <Head>
         <title>{data.title}</title>
-        <meta name="description" content={data.blurb} />
+        <meta
+          name="description"
+          content={`${data.blurb} CreateBase Help Center.`}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

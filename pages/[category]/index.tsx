@@ -32,7 +32,12 @@ const Category: NextPage = () => {
     <div className={classes.page}>
       <Head>
         <title>{data.title}</title>
-        <meta name="description" content={data.description} />
+        <meta
+          name="description"
+          content={`${data.description} Read ${data.featured
+            .map((article) => article.title)
+            .join(", ")}. CreateBase Help Center.`}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

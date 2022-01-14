@@ -82,7 +82,7 @@
       left: 50%;
       width: calc(100% - 2rem);
       height: 0;
-      background: $light;
+      background: $lighter;
       transform: translateX(-50%);
       transition: height 0.1s ease-out;
     }

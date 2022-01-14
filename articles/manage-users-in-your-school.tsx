@@ -7,7 +7,7 @@ const MANAGE_USERS_IN_YOUR_SCHOOL: Article = {
   title: "Manage users in your school",
   url: "/manage-users-in-your-school",
   blurb:
-    "Learn how to add users to and remove users from your school group, including both teachers and students",
+    "Learn how to add users to and remove users from your school group, including both teachers and students.",
   content: (
     <>
       <p>

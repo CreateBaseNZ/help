@@ -6,7 +6,7 @@ import { Article } from "../types/article";
 const WHAT_ARE_GROUPS: Article = {
   title: "What are groups?",
   url: "/what-are-groups",
-  blurb: "Find out how groups work on the CreateBase platform",
+  blurb: "Find out how groups work on the CreateBase platform.",
   content: (
     <>
       <p>
