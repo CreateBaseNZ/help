@@ -1,0 +1,104 @@
+@import "/styles/variables";
+
+.container {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btnContainer {
+  margin: 1rem 0;
+  display: flex;
+  button {
+    height: 2.75rem;
+    padding: 0 1rem;
+    font-weight: 500;
+    transition: color 0.1s ease-out, background-color 0.1s ease-out,
+      border-color 0.1s ease-out;
+    i {
+      margin-right: 0.5rem;
+      font-size: 22px;
+    }
+    &:hover {
+      filter: none !important;
+      opacity: 1 !important;
+    }
+    &.inactive {
+      filter: saturate(0);
+      opacity: 0.5;
+    }
+  }
+}
+
+.yes {
+  color: $green-mid;
+  margin-right: 1rem;
+  &:hover {
+    border-color: $green-mid;
+  }
+  &.active {
+    background: $green-mid;
+    color: white;
+  }
+}
+
+.no {
+  color: $red;
+  &:hover {
+    border-color: $red;
+  }
+  &.active {
+    background: $red;
+    color: white;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  .label {
+    font-size: 12px;
+    margin: 0.5rem 0;
+  }
+  .input {
+    width: 100%;
+    height: 8rem;
+    background: $lighter;
+    border-radius: 1rem;
+    resize: none;
+    font-size: 14px;
+    font-family: $poppins;
+    padding: 0.75rem 1rem;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+  }
+  .submit {
+    align-self: flex-start;
+    border-radius: 999px;
+    margin: 1.5rem 0;
+    height: 3rem;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: $logo-mid;
+    font-weight: 600;
+    background: rgba($logo-mid, 0.05);
+    i {
+      color: inherit;
+      font-size: 1.25rem;
+      margin-left: 0.5rem;
+      transform: rotate(-45deg);
+      transition: transform 0.2s ease-out;
+    }
+    &:hover i {
+      transform: none;
+    }
+  }
+}

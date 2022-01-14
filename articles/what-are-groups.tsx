@@ -26,7 +26,7 @@ const WHAT_ARE_GROUPS: Article = {
         group{" "}
         <Link href={`/support/admins/register-or-join-your-school`}>here</Link>{" "}
         and how to add students to your group{" "}
-        <Link href="/support/admins/adding-students">here</Link>
+        <Link href="/support/admins/adding-students">here</Link>.
       </p>
       <p>
         If you&apos;re a <b>student</b>, learn how to join a school group{" "}

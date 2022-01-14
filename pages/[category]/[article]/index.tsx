@@ -8,6 +8,10 @@ import { useRouter } from "next/router";
 import CATEGORIES from "../../../constants/categories";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import Crumbs from "../../../components/Crumbs";
+import { Category } from "../../../types/categories";
+import H1 from "../../../components/H1";
+import Review from "../../../components/Review";
 
 const findArticle = (object: Object, string: string) => {
   let result;
@@ -22,6 +26,7 @@ const findArticle = (object: Object, string: string) => {
 const Article: NextPage = () => {
   const router = useRouter();
   const [data, setData] = useState<Article>();
+  const [category, setCategory] = useState<Category>();
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -35,13 +40,17 @@ const Article: NextPage = () => {
       const article = subcategory.articles.find(
         (article) => article.url === `/${router.query.article}`
       );
-      if (article) return void setData(article);
+      if (article) {
+        setCategory(category);
+        setData(article);
+        return;
+      }
     }
 
     router.push("/404");
   }, [router]);
 
-  if (!data) return null;
+  if (!data || !category) return null;
 
   return (
     <div className={classes.page}>
@@ -51,6 +60,18 @@ const Article: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <main className={classes.main}>
+        <Crumbs
+          crumbs={[
+            { url: category.url, title: category.title },
+            { url: data.url, title: data.title },
+          ]}
+        />
+        <H1>{data.title}</H1>
+        <div className={classes.blurb}>{data.blurb}</div>
+        <article className={classes.article}>{data.content}</article>
+        <Review />
+      </main>
       <Footer />
     </div>
   );
