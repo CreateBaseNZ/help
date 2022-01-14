@@ -9,7 +9,7 @@ const Review = (): JSX.Element => {
   const submitHandler = (e: SyntheticEvent) => {
     e.preventDefault();
     if (!ref.current) return;
-    if (!isHelpful && !isHelpful) return;
+    if (!isHelpful && !ref.current.value) return;
     console.log(isHelpful);
     console.log(ref.current.value);
   };
