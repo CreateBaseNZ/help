@@ -7,6 +7,8 @@ import CATEGORIES, { Category } from "../../constants/categories";
 
 import classes from "../../styles/category.module.scss";
 import Footer from "../../components/Footer";
+import H1 from "../../components/H1";
+import Link from "next/link";
 
 const Category: NextPage = () => {
   const router = useRouter();
@@ -24,18 +26,34 @@ const Category: NextPage = () => {
 
   console.log("re-rendered");
 
+  if (!data) return null;
+
   return (
     <div className={classes.page}>
       <Head>
-        <title>{data?.title}</title>
-        <meta
-          name="description"
-          content="Find answers to commonly asked questions. A library of resources to help you use CreateBase in and out of the classrooom."
-        />
+        <title>{data.title}</title>
+        <meta name="description" content={data.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className={classes.main}></main>
+      <main className={classes.main}>
+        <div className={classes.h1}>
+          <i className="material-icons-outlined">{data.icon}</i>
+          <H1>{data.title}</H1>
+        </div>
+        {data.subcategories.map((subcategory) => (
+          <section key={subcategory.title} className={classes.container}>
+            <h2>{subcategory.title}</h2>
+            <div className={classes.wrapper}>
+              {subcategory.articles.map((article) => (
+                <Link key={article.url} href={`${data.url}${article.url}`}>
+                  <a className={classes.article}>{article.title}</a>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ))}
+      </main>
       <Footer />
     </div>
   );

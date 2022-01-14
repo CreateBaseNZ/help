@@ -1,6 +1,8 @@
 @import "/styles/variables";
 
 .h1 {
+  display: flex;
+  align-items: center;
   font-size: 2rem;
   font-weight: 600;
 }

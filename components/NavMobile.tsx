@@ -40,6 +40,7 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
                   router.asPath === category.url ? classes.active : ""
                 }`}
                 title={category.title}
+                onClick={() => setShowNavMobile(false)}
               >
                 <i className="material-icons-outlined">{category.icon}</i>
                 {category.title}
@@ -49,7 +50,11 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
           <div className={classes.subheading}>Resources</div>
           {RESOURCES.map((resource) => (
             <Link key={resource.url} href={resource.url}>
-              <a className={classes.resource} title={resource.title}>
+              <a
+                className={classes.resource}
+                title={resource.title}
+                onClick={() => setShowNavMobile(false)}
+              >
                 {resource.title}
                 <i className="material-icons-outlined">arrow_forward</i>
               </a>

@@ -28,7 +28,7 @@ const Banner = ({ searchRef, results, setResults }: Props): JSX.Element => {
       <div className={`${classes.shape} ${classes.blue}`} />
       <div className={`${classes.shape} ${classes.yellow}`} />
       <div className={classes.wrapper}>
-        <H1 string="How can we help?" />
+        <H1>How can we help?</H1>
         <form onSubmit={submitHandler} className={classes.form}>
           <SearchBar
             inputRef={searchRef}
