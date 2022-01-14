@@ -75,14 +75,33 @@
   display: flex;
   align-items: center;
   font-weight: 500;
+  position: relative;
   transition: color 0.1s ease-out;
   i {
     margin-right: 1rem;
     color: inherit;
     font-size: 1.25rem;
   }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0.25rem;
+    left: 3rem;
+    width: 0;
+    height: 2px;
+    background: $logo-mid;
+    transition: width 0.2s ease-out;
+  }
   &:hover {
     color: $logo-mid;
+  }
+  &.active {
+    i {
+      color: $logo-mid;
+    }
+    &::after {
+      width: 2rem;
+    }
   }
 }
 

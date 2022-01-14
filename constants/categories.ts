@@ -1,7 +1,7 @@
 import WHAT_ARE_GROUPS from "../articles/what-are-groups";
 import { Article } from "../types/article";
 
-type Category = {
+export type Category = {
   label: string;
   icon: string;
   url: string;

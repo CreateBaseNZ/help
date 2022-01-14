@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Dispatch, SetStateAction } from "react";
 import CATEGORIES from "../constants/categories";
 import RESOURCES from "../resources/resources";
@@ -11,6 +12,8 @@ interface Props {
 }
 
 const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
+  const router = useRouter();
+
   return (
     <div
       className={`${classes.container} ${showNavMobile ? classes.show : ""}`}
@@ -32,7 +35,12 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
         <div className={classes.wrapper}>
           {CATEGORIES.map((category) => (
             <Link key={category.url} href={category.url}>
-              <a className={classes.link} title={category.label}>
+              <a
+                className={`${classes.link} ${
+                  router.asPath === category.url ? classes.active : ""
+                }`}
+                title={category.label}
+              >
                 <i className="material-icons-outlined">{category.icon}</i>
                 {category.label}
               </a>

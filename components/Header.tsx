@@ -11,8 +11,6 @@ const Header = (): JSX.Element => {
   const router = useRouter();
   const [showNavMobile, setShowNavMobile] = useState(false);
 
-  console.log(router.asPath);
-
   return (
     <header className={classes.header}>
       <Link href="/" passHref>
@@ -35,16 +33,20 @@ const Header = (): JSX.Element => {
             </a>
           </Link>
         ))}
-        <BorderButton
-          label="Website"
-          leftIcon="language"
-          className={`${classes.subdomain} ${classes.website}`}
-        />
-        <BorderButton
-          label="App"
-          leftIcon="launch"
-          className={`${classes.subdomain} ${classes.app}`}
-        />
+        <a target="_blank" href="https://createbase.co.nz" rel="noreferrer">
+          <BorderButton
+            label="Website"
+            leftIcon="language"
+            className={`${classes.subdomain} ${classes.website}`}
+          />
+        </a>
+        <a target="_blank" href="https://app.createbase.co.nz" rel="noreferrer">
+          <BorderButton
+            label="App"
+            leftIcon="launch"
+            className={`${classes.subdomain} ${classes.app}`}
+          />
+        </a>
       </nav>
       <button
         className={classes.mobileMenu}

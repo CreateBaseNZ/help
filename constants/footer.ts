@@ -18,7 +18,7 @@ const FOOTER_LINKS: FooterSection[] = [
       { label: "Visit our website", url: "https://createbase.co.nz/" },
       {
         label: "Visit our platform",
-        url: "https://app.createbase.co.nz/browse",
+        url: "https://app.createbase.co.nz",
       },
       {
         label: "Sign up for free",
