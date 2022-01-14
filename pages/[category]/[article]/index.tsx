@@ -6,6 +6,8 @@ import { Article } from "../../../types/article";
 import classes from "../../../styles/article.module.scss";
 import { useRouter } from "next/router";
 import CATEGORIES from "../../../constants/categories";
+import Footer from "../../../components/Footer";
+import Header from "../../../components/Header";
 
 const findArticle = (object: Object, string: string) => {
   let result;
@@ -48,6 +50,8 @@ const Article: NextPage = () => {
         <meta name="description" content={data.blurb} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
+      <Footer />
     </div>
   );
 };

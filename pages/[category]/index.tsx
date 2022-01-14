@@ -10,6 +10,7 @@ import H1 from "../../components/H1";
 import { Category } from "../../types/categories";
 
 import classes from "../../styles/category.module.scss";
+import Crumbs from "../../components/Crumbs";
 
 const Category: NextPage = () => {
   const router = useRouter();
@@ -36,23 +37,7 @@ const Category: NextPage = () => {
       </Head>
       <Header />
       <main className={classes.main}>
-        <div className={classes.crumbTrail}>
-          <div className={classes.crumbWrapper}>
-            <Link href="/">
-              <a className={classes.crumb} title="Help Center">
-                Help Center
-              </a>
-            </Link>
-          </div>
-          <div className={classes.crumbWrapper}>
-            <i className="material-icons-outlined">chevron_right</i>
-            <Link href={data.url}>
-              <a className={classes.crumb} title={data.title}>
-                {data.title}
-              </a>
-            </Link>
-          </div>
-        </div>
+        <Crumbs crumbs={[{ url: data.url, title: data.title }]} />
         <div className={classes.h1}>
           <i className="material-icons-outlined">{data.icon}</i>
           <H1>{data.title}</H1>

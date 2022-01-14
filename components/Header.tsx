@@ -26,7 +26,9 @@ const Header = (): JSX.Element => {
           <Link key={category.url} href={category.url}>
             <a
               className={`${classes.link} ${
-                router.asPath === category.url ? classes.active : ""
+                `/${router.query.category}` === category.url
+                  ? classes.active
+                  : ""
               }`}
             >
               {category.title}
