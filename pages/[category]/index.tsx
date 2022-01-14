@@ -5,6 +5,9 @@ import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import CATEGORIES, { Category } from "../../constants/categories";
 
+import classes from "../../styles/category.module.scss";
+import Footer from "../../components/Footer";
+
 const Category: NextPage = () => {
   const router = useRouter();
   const [data, setData] = useState<Category>();
@@ -22,9 +25,9 @@ const Category: NextPage = () => {
   console.log("re-rendered");
 
   return (
-    <div>
+    <div className={classes.page}>
       <Head>
-        <title>{data?.label}</title>
+        <title>{data?.title}</title>
         <meta
           name="description"
           content="Find answers to commonly asked questions. A library of resources to help you use CreateBase in and out of the classrooom."
@@ -32,6 +35,8 @@ const Category: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <main className={classes.main}></main>
+      <Footer />
     </div>
   );
 };

@@ -12,9 +12,9 @@ const Categories = (): JSX.Element => {
           <section key={category.url} className={classes.category}>
             <h3>
               <i className="material-icons-outlined">{category.icon}</i>
-              {category.label}
+              {category.title}
             </h3>
-            {category.articles.map((article) => (
+            {category.featured.map((article) => (
               <Link key={article.url} href={`${category.url}${article.url}`}>
                 <a className={classes.article} title={article.title}>
                   {article.title}

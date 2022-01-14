@@ -35,7 +35,7 @@ const FOOTER_LINKS: FooterSection[] = [
     links: [
       { label: "Help Center", url: "/" },
       ...CATEGORIES.map((category) => ({
-        label: category.label,
+        label: category.title,
         url: category.url,
       })),
     ],

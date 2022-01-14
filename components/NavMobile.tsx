@@ -39,10 +39,10 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
                 className={`${classes.link} ${
                   router.asPath === category.url ? classes.active : ""
                 }`}
-                title={category.label}
+                title={category.title}
               >
                 <i className="material-icons-outlined">{category.icon}</i>
-                {category.label}
+                {category.title}
               </a>
             </Link>
           ))}
@@ -56,13 +56,18 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
             </Link>
           ))}
         </div>
-        <div className={classes.websiteContainer}>
+        <a
+          className={classes.websiteContainer}
+          target="_blank"
+          href="https://app.createbase.co.nz"
+          rel="noreferrer"
+        >
           <BorderButton
             label="Website"
             className={classes.website}
             leftIcon="language"
           />
-        </div>
+        </a>
       </nav>
     </div>
   );

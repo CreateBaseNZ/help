@@ -1,36 +1,47 @@
 import WHAT_ARE_GROUPS from "../articles/what-are-groups";
 import { Article } from "../types/article";
 
+export type SubCategory = {
+  title: string;
+  articles: Article[];
+};
+
 export type Category = {
-  label: string;
+  title: string;
   icon: string;
   url: string;
-  articles: Article[];
+  featured: Article[];
+  subcategories: SubCategory[];
 };
 
 const CATEGORIES: Category[] = [
   {
-    label: "Managing groups & classes",
+    title: "Managing groups & classes",
     icon: "groups",
     url: "/managing-groups-&-classes",
-    articles: [WHAT_ARE_GROUPS, WHAT_ARE_GROUPS, WHAT_ARE_GROUPS],
+    featured: [WHAT_ARE_GROUPS, WHAT_ARE_GROUPS, WHAT_ARE_GROUPS],
+    subcategories: [
+      { title: "Introduction to groups", articles: [WHAT_ARE_GROUPS] },
+    ],
   },
   {
-    label: "Teaching & learning tools",
+    title: "Teaching & learning tools",
     icon: "auto_fix_high",
     url: "/teaching-&-learning-tools",
-    articles: [WHAT_ARE_GROUPS, WHAT_ARE_GROUPS],
+    featured: [WHAT_ARE_GROUPS, WHAT_ARE_GROUPS],
+    subcategories: [],
   },
   {
-    label: "Privacy & security",
+    title: "Privacy & security",
     icon: "verified_user",
     url: "/privacy-&-security",
-    articles: [
+    featured: [
       WHAT_ARE_GROUPS,
       WHAT_ARE_GROUPS,
       WHAT_ARE_GROUPS,
       WHAT_ARE_GROUPS,
     ],
+    subcategories: [],
   },
 ];
 

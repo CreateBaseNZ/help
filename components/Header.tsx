@@ -29,7 +29,7 @@ const Header = (): JSX.Element => {
                 router.asPath === category.url ? classes.active : ""
               }`}
             >
-              {category.label}
+              {category.title}
             </a>
           </Link>
         ))}
