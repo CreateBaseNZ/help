@@ -17,20 +17,27 @@ const WHAT_ARE_GROUPS: Article = {
       <p>
         Groups can either be a learning institution (school/other) or a family
         (coming soon). School groups are managed by{" "}
-        <Link href="/support/admins/group-roles">admin accounts</Link> and must
-        contain all of the teachers and students in your school who wish to use
-        the platform.
+        <Link href={`/managing-groups-&-classes/school-group-roles`}>
+          admin accounts
+        </Link>{" "}
+        and must contain all of the teachers and students in your school who
+        wish to use the platform.
       </p>
       <p>
         If you&apos;re a <b>teacher</b>, learn how to register or join a school
         group{" "}
-        <Link href={`/support/admins/register-or-join-your-school`}>here</Link>{" "}
+        <Link href={`/managing-groups-&-classes/register-or-join-your-school`}>
+          here
+        </Link>{" "}
         and how to add students to your group{" "}
-        <Link href="/support/admins/adding-students">here</Link>.
+        <Link href={`/managing-groups-&-classes/adding-students`}>here</Link>.
       </p>
       <p>
         If you&apos;re a <b>student</b>, learn how to join a school group{" "}
-        <Link href="/support/students/join-a-school">here</Link>.
+        <Link href={`/managing-groups-&-classes/register-or-join-your-school`}>
+          here
+        </Link>
+        .
       </p>
     </>
   ),

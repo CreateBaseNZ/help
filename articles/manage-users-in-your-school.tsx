@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Article } from "../types/article";
 
-// TODO fix image and links
+// TODO fix images
 
 const MANAGE_USERS_IN_YOUR_SCHOOL: Article = {
   title: "Manage users in your school",
@@ -12,9 +12,18 @@ const MANAGE_USERS_IN_YOUR_SCHOOL: Article = {
     <>
       <p>
         To use the Manage Users tab, please note that you need to be an{" "}
-        <Link href="/support/admins/group-roles">admin</Link> or a{" "}
-        <Link href="/support/teachers/group-roles">teacher</Link> in a{" "}
-        <Link href="/support/admins/what-are-groups">group</Link>.
+        <Link href={`/managing-groups-&-classes/school-group-roles`}>
+          admin
+        </Link>{" "}
+        or a{" "}
+        <Link href={`/managing-groups-&-classes/school-group-roles`}>
+          teacher
+        </Link>{" "}
+        in a{" "}
+        <Link href={`/managing-groups-&-classes/school-group-roles`}>
+          group
+        </Link>
+        .
       </p>
       <p>
         In the Manage Users tab, you can view all the accounts that have joined
