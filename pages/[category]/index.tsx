@@ -8,9 +8,9 @@ import CATEGORIES from "../../constants/categories";
 import Footer from "../../components/Footer";
 import H1 from "../../components/H1";
 import { Category } from "../../types/Category";
+import Crumbs from "../../components/Crumbs";
 
 import classes from "../../styles/category.module.scss";
-import Crumbs from "../../components/Crumbs";
 
 const Category: NextPage = () => {
   const router = useRouter();

@@ -3,18 +3,15 @@
 .container {
   width: 100%;
   height: 35vh;
-  max-height: 350px;
-  min-height: 250px;
   padding: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  transition: height 0.2s ease-out;
   &.collapse {
     height: 200px;
-    max-height: 200px;
-    min-height: 200px;
   }
 }
 

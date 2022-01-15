@@ -48,6 +48,14 @@ const Results = ({ searchRef, results }: Props): JSX.Element => {
           <Crumbs crumbs={result.item.trail} className={classes.trail} />
         </div>
       ))}
+      {!results.length && (
+        <div className={classes.noResults}>
+          <h2>
+            Sorry, we couldn&apos;t find any results matching{" "}
+            <b>{router.query.search}</b>
+          </h2>
+        </div>
+      )}
     </div>
   );
 };
