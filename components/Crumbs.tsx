@@ -8,11 +8,12 @@ export type Crumb = {
 
 interface Props {
   crumbs: Crumb[];
+  className?: string;
 }
 
-const Crumbs = ({ crumbs }: Props): JSX.Element => {
+const Crumbs = ({ crumbs, className }: Props): JSX.Element => {
   return (
-    <div className={classes.trail}>
+    <div className={`${classes.trail} ${className}`}>
       <div className={classes.crumbWrapper}>
         <Link href="/">
           <a className={classes.crumb} title="Help Center">

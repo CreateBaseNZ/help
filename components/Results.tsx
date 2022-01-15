@@ -1,7 +1,9 @@
 import Fuse from "fuse.js";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { RefObject } from "react";
 import { FuseResult } from "../types/FuseResult";
+import Crumbs from "./Crumbs";
 import classes from "./Results.module.scss";
 
 interface Props {
@@ -11,8 +13,6 @@ interface Props {
 
 const Results = ({ searchRef, results }: Props): JSX.Element => {
   const router = useRouter();
-
-  console.log(results);
 
   const clearHandler = () => {
     router.push("/");
@@ -35,9 +35,17 @@ const Results = ({ searchRef, results }: Props): JSX.Element => {
         </button>
       </div>
       {results.map((result) => (
-        <div className={classes.result} key={result.item.url}>
-          <h2>{result.item.title}</h2>
+        <div key={result.item.url} className={classes.result}>
+          <Link href={result.item.trail[result.item.trail.length - 1].url}>
+            <a
+              className={classes.resultTitle}
+              title={`Open ${result.item.title}`}
+            >
+              {result.item.title}
+            </a>
+          </Link>
           <p>{result.item.blurb}</p>
+          <Crumbs crumbs={result.item.trail} className={classes.trail} />
         </div>
       ))}
     </div>

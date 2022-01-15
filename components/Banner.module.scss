@@ -20,6 +20,8 @@
 
 .wrapper {
   z-index: 1;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
 }
@@ -27,7 +29,6 @@
 .form {
   margin-top: 1rem;
   width: 100%;
-  max-width: 350px;
   .searchBar {
     width: 100%;
   }
@@ -95,10 +96,10 @@
   height: 400px;
   width: 200px;
   border-radius: 4rem;
-  background: rgba($gold, 0.05);
+  background: rgba($gold, 0.1);
   transform: translate(-50%, 70%) rotate(-75deg);
   &::after {
-    border-color: rgba($gold, 0.25);
+    border-color: rgba($gold, 0.5);
     transform: translate(1rem, 4rem);
   }
 }

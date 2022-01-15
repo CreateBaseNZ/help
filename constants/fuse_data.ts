@@ -22,7 +22,6 @@ const FUSE_DATA: FuseResult[] = CATEGORIES.map((category) =>
       ...article,
       plain: extractText(article.content),
       trail: [
-        { url: "/", title: "Help Center" },
         { url: category.url, title: category.title },
         { url: `${category.url}${article.url}`, title: article.title },
       ],

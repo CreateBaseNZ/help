@@ -4,14 +4,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 3rem;
+  padding: 2rem 3rem;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
 }
 
 .numResults {
@@ -23,6 +22,7 @@
   display: flex;
   align-items: center;
   padding: 0.5rem 0.75rem;
+  color: $light;
   font-size: 0.75rem;
   border-radius: 999px;
   transition: color 0.1s ease-out, background-color 0.1s ease-out;
@@ -43,15 +43,74 @@
   width: 100%;
   padding: 1rem 0;
   border-bottom: 2px solid $lighter;
-  h2 {
+  .resultTitle {
+    align-self: flex-start;
     font-size: 1rem;
     font-weight: 600;
-    margin: 0.5rem 0 0.25rem 0;
+    margin: 0.5rem 0;
     color: $blue-mid;
+    position: relative;
+    transition: color 0.1s ease-out;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 0;
+      background: $blue-dark;
+      transition: width 0.2s ease-out;
+    }
+    &:hover {
+      color: $blue-dark;
+      &::after {
+        width: 100%;
+      }
+    }
   }
   p {
     font-size: 0.75rem;
     font-weight: 400;
-    margin: 0.25rem 0 0.5rem 0;
+    margin: 0.25rem 0;
+    line-height: 1.75em;
+  }
+  &:last-child {
+    border: none;
+  }
+}
+
+.trail {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 2rem 3rem 3rem 3rem;
+    max-width: 1000px;
+    align-self: center;
+  }
+  .numResults {
+    font-size: 14px;
+  }
+  .clear {
+    font-size: 14px;
+    padding: 0.75rem 1rem;
+    i {
+      font-size: 18px;
+    }
+  }
+  .result {
+    padding: 1.75rem 0;
+    .resultTitle {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .trail {
+    display: flex;
+    margin: 0;
+    margin-top: 0.5rem;
   }
 }
