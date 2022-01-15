@@ -10,7 +10,7 @@ interface Props {
   setResults: any; // TODO
 }
 
-const Banner = ({ searchRef, results, setResults }: Props): JSX.Element => {
+const Banner = ({ searchRef, results }: Props): JSX.Element => {
   const router = useRouter();
 
   const submitHandler = (e: SyntheticEvent) => {

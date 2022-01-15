@@ -13,7 +13,8 @@
   overflow: hidden;
   &.collapse {
     height: 200px;
-    min-height: none;
+    max-height: 200px;
+    min-height: 200px;
   }
 }
 

@@ -58,7 +58,7 @@ const Home: NextPage = () => {
         />
         {!results && <Categories />}
         {!results && <Resources />}
-        {results && <Results results={results} />}
+        {results && <Results searchRef={searchRef} results={results} />}
       </main>
       <Footer />
     </div>
