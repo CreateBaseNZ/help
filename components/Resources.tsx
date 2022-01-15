@@ -68,11 +68,13 @@ const Resources = (): JSX.Element => {
             className={classes.swiperPrev}
             leftIcon="chevron_left"
             label=""
+            title="Previous"
           />
           <BorderButton
             className={classes.swiperNext}
             leftIcon="chevron_right"
             label=""
+            title="Next"
           />
         </div>
       </Swiper>
