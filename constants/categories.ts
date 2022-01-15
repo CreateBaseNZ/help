@@ -12,7 +12,8 @@ const CATEGORIES: Category[] = [
     title: "Managing groups & classes",
     icon: "groups",
     url: "/managing-groups-&-classes",
-    description: "",
+    description:
+      "Learn about all the features enabled by groups and classes—from registration to class integration.",
     featured: [
       WHAT_ARE_GROUPS,
       REGISTER_OR_JOIN_YOUR_SCHOOL,
