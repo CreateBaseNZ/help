@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 
-export type Article = {
+export interface Article {
   title: string;
   url: string;
   blurb: string;
   content: ReactElement;
-};
+}

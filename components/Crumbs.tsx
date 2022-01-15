@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classes from "./Crumbs.module.scss";
 
-type Crumb = {
+export type Crumb = {
   url: string;
   title: string;
 };

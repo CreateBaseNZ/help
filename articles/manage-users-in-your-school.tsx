@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ArticleImage from "../components/ArticleImage";
-import { Article } from "../types/article";
+import { Article } from "../types/Article";
 
 const MANAGE_USERS_IN_YOUR_SCHOOL: Article = {
   title: "Manage users in your school",

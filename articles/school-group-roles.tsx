@@ -1,4 +1,4 @@
-import { Article } from "../types/article";
+import { Article } from "../types/Article";
 
 const SCHOOL_GROUP_ROLES: Article = {
   title: "School group roles",

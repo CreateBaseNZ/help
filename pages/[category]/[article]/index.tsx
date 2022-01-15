@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Article } from "../../../types/article";
+import { Article } from "../../../types/Article";
 
 import classes from "../../../styles/article.module.scss";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ import CATEGORIES from "../../../constants/categories";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
-import { Category } from "../../../types/categories";
+import { Category } from "../../../types/Category";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Article } from "../types/article";
+import { Article } from "../types/Article";
 
 const WHAT_ARE_GROUPS: Article = {
   title: "What are groups?",

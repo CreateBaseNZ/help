@@ -1,17 +1,43 @@
+import Fuse from "fuse.js";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRef, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Resources from "../components/Resources";
+import FUSE_DATA from "../constants/fuse_data";
+import Results from "../components/Results";
+import { FuseResult } from "../types/FuseResult";
 
 import classes from "../styles/index.module.scss";
 
 const Home: NextPage = () => {
-  const searchRef = useRef(null);
-  const [results, setResults] = useState(null);
+  const router = useRouter();
+  const searchRef = useRef<HTMLInputElement>(null);
+  const [fuse] = useState(
+    new Fuse(FUSE_DATA, {
+      keys: ["title", "blurb", "plain"],
+    })
+  );
+  const [results, setResults] = useState<Fuse.FuseResult<FuseResult>[] | null>(
+    null
+  );
+
+  console.log("**rerendered**");
+  console.log(FUSE_DATA);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    if (router.query.search) {
+      const res = fuse.search(router.query.search as string);
+      setResults(res);
+    } else {
+      setResults(null);
+    }
+  }, [router, fuse]);
 
   return (
     <div className={classes.home}>
@@ -30,10 +56,10 @@ const Home: NextPage = () => {
           results={results}
           setResults={setResults}
         />
-        <Categories />
-        <Resources />
+        {!results && <Categories />}
+        {!results && <Resources />}
+        {results && <Results results={results} />}
       </main>
-
       <Footer />
     </div>
   );

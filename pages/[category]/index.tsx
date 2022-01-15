@@ -7,7 +7,7 @@ import Header from "../../components/Header";
 import CATEGORIES from "../../constants/categories";
 import Footer from "../../components/Footer";
 import H1 from "../../components/H1";
-import { Category } from "../../types/categories";
+import { Category } from "../../types/Category";
 
 import classes from "../../styles/category.module.scss";
 import Crumbs from "../../components/Crumbs";
