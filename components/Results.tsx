@@ -12,6 +12,8 @@ interface Props {
 const Results = ({ searchRef, results }: Props): JSX.Element => {
   const router = useRouter();
 
+  console.log(results);
+
   const clearHandler = () => {
     router.push("/");
     if (searchRef.current) searchRef.current.value = "";
@@ -20,11 +22,24 @@ const Results = ({ searchRef, results }: Props): JSX.Element => {
   return (
     <div className={classes.container}>
       <div className={classes.header}>
-        {results.length} results for &ldquo;{router.query.search}&rdquo;
-        <button title="Clear results" onClick={clearHandler}>
+        <span className={classes.numResults}>
+          {results.length} result{results.length === 1 ? "" : "s"} for &ldquo;
+          {router.query.search}&rdquo;
+        </span>
+        <button
+          className={classes.clear}
+          title="Clear results"
+          onClick={clearHandler}
+        >
           <i className="material-icons-outlined">clear</i>Clear
         </button>
       </div>
+      {results.map((result) => (
+        <div className={classes.result} key={result.item.url}>
+          <h2>{result.item.title}</h2>
+          <p>{result.item.blurb}</p>
+        </div>
+      ))}
     </div>
   );
 };

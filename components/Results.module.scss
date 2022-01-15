@@ -3,4 +3,55 @@
 .container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 0 3rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.numResults {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  transition: color 0.1s ease-out, background-color 0.1s ease-out;
+  i {
+    font-size: 14px;
+    color: inherit;
+    margin-right: 0.25rem;
+  }
+  &:hover {
+    color: $red;
+    background: rgba($red, 0.05);
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 2px solid $lighter;
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0.25rem 0;
+    color: $blue-mid;
+  }
+  p {
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin: 0.25rem 0 0.5rem 0;
+  }
 }
