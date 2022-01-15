@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-// TODO - fix images
+import ArticleImage from "../components/ArticleImage";
 
 const REGISTER_OR_JOIN_YOUR_SCHOOL = {
   title: "Register or join your school",
@@ -40,13 +39,13 @@ const REGISTER_OR_JOIN_YOUR_SCHOOL = {
         to the admin (the user who registered the school).
       </p>
       <p>The admin can then accept your request.</p>
-      <img
+      <ArticleImage
         src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school.jpg"
-        style={{ maxWidth: 600 }}
+        alt="Join a School button on the My Groups tab"
       />
-      <img
-        src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-teach.gif"
-        style={{ maxWidth: 600 }}
+      <ArticleImage
+        src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-teacher.gif"
+        alt="Join a school as a teacher"
       />
       <p>For students to join a school, they must use a student code.</p>
       <p>

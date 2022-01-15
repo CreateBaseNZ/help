@@ -1,7 +1,6 @@
 import Link from "next/link";
+import ArticleImage from "../components/ArticleImage";
 import { Article } from "../types/article";
-
-// TODO fix images
 
 const MANAGE_USERS_IN_YOUR_SCHOOL: Article = {
   title: "Manage users in your school",
@@ -33,9 +32,9 @@ const MANAGE_USERS_IN_YOUR_SCHOOL: Article = {
         Users are grouped based on their role within the group: admin, teacher
         or student.
       </p>
-      <img
+      <ArticleImage
         src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/manage-users.gif"
-        style={{ maxWidth: 800 }}
+        alt="Manage users in the Manage Group tab"
       />
       <p>
         For all users, you can view their first name, last name, email and who

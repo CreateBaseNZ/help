@@ -1,4 +1,4 @@
-// TODO fix images
+import ArticleImage from "../components/ArticleImage";
 
 const ADDING_STUDENTS = {
   title: "Adding students",
@@ -13,16 +13,16 @@ const ADDING_STUDENTS = {
       <ol>
         <li>
           Create their own account
-          <img
+          <ArticleImage
             src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-student.jpg"
-            style={{ maxWidth: 800 }}
+            alt="Create an account"
           />
         </li>
         <li>
           Open the My Groups tab and select join a group
-          <img
+          <ArticleImage
             src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-students.gif"
-            style={{ maxWidth: 800 }}
+            alt="Join a group on the My Groups tab"
           />
         </li>
         <li>Enter the student code</li>
@@ -31,9 +31,9 @@ const ADDING_STUDENTS = {
         You can find the student code for your group by clicking
         &ldquo;Add&rdquo; on the Manage Group page.
       </p>
-      <img
+      <ArticleImage
         src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/add-students-school.jpg"
-        style={{ maxWidth: 800 }}
+        alt="Student codes can be found in the Manage Group page"
       />
     </>
   ),

@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Article } from "../types/article";
 
-// TODO fix the links
-
 const WHAT_ARE_GROUPS: Article = {
   title: "What are groups?",
   url: "/what-are-groups",
