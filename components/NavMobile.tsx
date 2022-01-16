@@ -14,6 +14,8 @@ interface Props {
 const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
   const router = useRouter();
 
+  console.log(router.asPath);
+
   return (
     <div
       className={`${classes.container} ${showNavMobile ? classes.show : ""}`}
@@ -33,17 +35,17 @@ const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
           </i>
         </button>
         <div className={classes.wrapper}>
-          {CATEGORIES.map((category) => (
-            <Link key={category.url} href={category.url}>
+          {Object.entries(CATEGORIES).map(([key, val]) => (
+            <Link key={key} href={`/${key}`}>
               <a
                 className={`${classes.link} ${
-                  router.asPath === category.url ? classes.active : ""
+                  router.query.category === key ? classes.active : ""
                 }`}
-                title={category.title}
+                title={val.title}
                 onClick={() => setShowNavMobile(false)}
               >
-                <i className="material-icons-outlined">{category.icon}</i>
-                {category.title}
+                <i className="material-icons-outlined">{val.icon}</i>
+                {val.title}
               </a>
             </Link>
           ))}

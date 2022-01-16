@@ -2,7 +2,8 @@ import { ReactElement } from "react";
 
 export interface IArticle {
   title: string;
-  url: string;
-  blurb: string;
-  content: ReactElement;
+  category: string;
+  slug: string;
+  excerpt: string;
+  content: string;
 }

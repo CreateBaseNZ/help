@@ -22,16 +22,14 @@ const Header = (): JSX.Element => {
         </a>
       </Link>
       <nav className={classes.nav}>
-        {CATEGORIES.map((category) => (
-          <Link key={category.url} href={category.url}>
+        {Object.entries(CATEGORIES).map(([key, val]) => (
+          <Link key={key} href={`/${key}`}>
             <a
               className={`${classes.link} ${
-                `/${router.query.category}` === category.url
-                  ? classes.active
-                  : ""
+                router.query.category === key ? classes.active : ""
               }`}
             >
-              {category.title}
+              {val.title}
             </a>
           </Link>
         ))}

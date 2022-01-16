@@ -1,5 +1,6 @@
 ---
 title: "What are groups?"
+category: "managing-groups-&-classes"
 excerpt: "Find out how groups work on the CreateBase platform."
 date: "2020-03-16T05:35:07.322Z"
 author:
