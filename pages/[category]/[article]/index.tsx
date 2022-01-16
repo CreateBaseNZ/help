@@ -10,9 +10,6 @@ import Crumbs from "../../../components/Crumbs";
 import { ICategory } from "../../../types/Category";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
-import useSWR from "swr";
-
-import ReactMarkdown from "react-markdown";
 
 import classes from "../../../styles/article.module.scss";
 
@@ -32,9 +29,6 @@ const Article: NextPage = () => {
   const router = useRouter();
   const [articleData, setArticleData] = useState<IArticle>();
   const [category, setCategory] = useState<ICategory>();
-  const { data, error } = useSWR("/api/github", fetcher);
-
-  console.log(data);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -84,7 +78,6 @@ const Article: NextPage = () => {
         <H1>{articleData.title}</H1>
         <div className={classes.blurb}>{articleData.blurb}</div>
         <article className={classes.article}>{articleData.content}</article>
-        <ReactMarkdown>{articleData.md}</ReactMarkdown>
         <Review />
       </main>
       <Footer />
