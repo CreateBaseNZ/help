@@ -19,7 +19,7 @@ const ADDING_STUDENTS = {
           />
         </li>
         <li>
-          Open the My Groups tab and select join a group
+          Open the My Groups tab and select &ldquo;Join a group&rdquo;
           <ArticleImage
             src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-students.gif"
             alt="Join a group on the My Groups tab"

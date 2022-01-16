@@ -17,7 +17,7 @@ const REGISTER_OR_JOIN_YOUR_SCHOOL = {
         Each form is individually verified by our team to ensure that bad actors
         can&apos;t make fake schools on our Platform. Once a form is submitted,
         our team will get in touch via email within 24 hours to notify you of
-        your School&apos;s registration. Upon positive confirmation, your school
+        your school&apos;s registration. Upon positive confirmation, your school
         group will be formed and you will automatically become the{" "}
         <Link href={`/managing-groups-&-classes/school-group-roles`}>
           admin user
@@ -41,7 +41,7 @@ const REGISTER_OR_JOIN_YOUR_SCHOOL = {
       <p>The admin can then accept your request.</p>
       <ArticleImage
         src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school.jpg"
-        alt="Join a School button on the My Groups tab"
+        alt="Join a school button on the My Groups tab"
       />
       <ArticleImage
         src="https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-teacher.gif"

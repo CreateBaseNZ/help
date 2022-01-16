@@ -14,7 +14,7 @@ const SCHOOL_GROUP_ROLES: IArticle = {
         <li>
           <b>Admins</b>—the admin role has access to the entire group. They are
           responsible for managing teachers and students. For example, this
-          include approving teacher&apos;s join requests and updating billing
+          includes approving teacher&apos;s join requests and updating billing
           information for the group.
         </li>
         <li>

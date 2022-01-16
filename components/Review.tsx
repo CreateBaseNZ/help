@@ -10,8 +10,6 @@ const Review = (): JSX.Element => {
     e.preventDefault();
     if (!ref.current) return;
     if (!isHelpful && !ref.current.value) return;
-    console.log(isHelpful);
-    console.log(ref.current.value);
   };
 
   return (

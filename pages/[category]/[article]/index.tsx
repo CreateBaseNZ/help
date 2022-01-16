@@ -2,8 +2,6 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { IArticle } from "../../../types/Article";
-
-import classes from "../../../styles/article.module.scss";
 import { useRouter } from "next/router";
 import CATEGORIES from "../../../constants/categories";
 import Footer from "../../../components/Footer";
@@ -12,6 +10,11 @@ import Crumbs from "../../../components/Crumbs";
 import { ICategory } from "../../../types/Category";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
+import useSWR from "swr";
+
+import ReactMarkdown from "react-markdown";
+
+import classes from "../../../styles/article.module.scss";
 
 const findArticle = (object: Object, string: string) => {
   let result;
@@ -23,10 +26,15 @@ const findArticle = (object: Object, string: string) => {
   return result;
 };
 
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
 const Article: NextPage = () => {
   const router = useRouter();
-  const [data, setData] = useState<IArticle>();
+  const [articleData, setArticleData] = useState<IArticle>();
   const [category, setCategory] = useState<ICategory>();
+  const { data, error } = useSWR("/api/github", fetcher);
+
+  console.log(data);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -42,7 +50,7 @@ const Article: NextPage = () => {
       );
       if (article) {
         setCategory(category);
-        setData(article);
+        setArticleData(article);
         return;
       }
     }
@@ -50,15 +58,15 @@ const Article: NextPage = () => {
     router.push("/404");
   }, [router]);
 
-  if (!data || !category) return null;
+  if (!articleData || !category) return null;
 
   return (
     <div className={classes.page}>
       <Head>
-        <title>{data.title}</title>
+        <title>{articleData.title}</title>
         <meta
           name="description"
-          content={`${data.blurb} CreateBase Help Center.`}
+          content={`${articleData.blurb} CreateBase Help Center.`}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -67,12 +75,16 @@ const Article: NextPage = () => {
         <Crumbs
           crumbs={[
             { url: category.url, title: category.title },
-            { url: `${category.url}${data.url}`, title: data.title },
+            {
+              url: `${category.url}${articleData.url}`,
+              title: articleData.title,
+            },
           ]}
         />
-        <H1>{data.title}</H1>
-        <div className={classes.blurb}>{data.blurb}</div>
-        <article className={classes.article}>{data.content}</article>
+        <H1>{articleData.title}</H1>
+        <div className={classes.blurb}>{articleData.blurb}</div>
+        <article className={classes.article}>{articleData.content}</article>
+        <ReactMarkdown>{articleData.md}</ReactMarkdown>
         <Review />
       </main>
       <Footer />
