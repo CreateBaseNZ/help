@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Link from "next/link";
 import BorderButton from "../components/BorderButton";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -20,11 +21,13 @@ const Error404: NextPage = () => {
             Sorry, the page you were looking for doesn&apos;t exist, has been
             removed, or is unavailable.
           </p>
-          <BorderButton
-            leftIcon="arrow_back"
-            label="Home"
-            className={classes.home}
-          />
+          <Link href="/" passHref>
+            <BorderButton
+              leftIcon="arrow_back"
+              label="Home"
+              className={classes.home}
+            />
+          </Link>
         </div>
       </main>
       <Footer />

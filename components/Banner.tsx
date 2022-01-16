@@ -6,8 +6,7 @@ import SearchBar from "./SearchBar";
 
 interface Props {
   searchRef: RefObject<HTMLInputElement>;
-  results: any; // TODO
-  setResults: any; // TODO
+  results: boolean;
 }
 
 const Banner = ({ searchRef, results }: Props): JSX.Element => {

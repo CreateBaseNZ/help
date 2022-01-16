@@ -26,9 +26,6 @@ const Home: NextPage = () => {
     null
   );
 
-  console.log("**rerendered**");
-  console.log(FUSE_DATA);
-
   useEffect(() => {
     if (!router.isReady) return;
     if (router.query.search) {
@@ -51,11 +48,7 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main className={classes.main}>
-        <Banner
-          searchRef={searchRef}
-          results={results}
-          setResults={setResults}
-        />
+        <Banner searchRef={searchRef} results={results !== null} />
         {!results && <Categories />}
         {!results && <Resources />}
         {results && <Results searchRef={searchRef} results={results} />}
