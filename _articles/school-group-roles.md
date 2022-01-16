@@ -1,14 +1,16 @@
 ---
-title: "What are groups?"
+title: "School group roles"
 category: "managing-groups-&-classes"
-subcategory: "Introduction to groups"
-excerpt: "Find out how groups work on the CreateBase platform."
+subcategory: "School groups"
+excerpt: "A short explanation of the three roles within school groups."
 ---
 
-To use the CreateBase platform you need to be part of a group. From the "My Account" tab, you can view all the groups your account has joined. A single CreateBase account can belong to multiple groups.
+Each groups has its own set of roles. For schools, there are three types:
 
-Groups can either be a learning institution (school/other) or a family (coming soon). School groups are managed by [admin accounts](/managing-groups-&-classes/school-group-roles) and must contain all of the teachers and students in your school who wish to use the platform.
+- **Admin** — the admin role has access to the entire group. They are responsible for managing teachers and students. For example, this includes approving teacher's join requests and updating billing information for the group.
 
-If you’re a **teacher**, learn how to register or join a school group [here](/managing-groups-&-classes/register-or-join-your-school) and how to add students to your group [here](/managing-groups-&-classes/adding-students).
+- **Teacher** — the teacher role has access to most of the platform. Teachers are mainly responsible for teaching and managing their classes.
 
-If you’re a **student**, learn how to join a school group [here](/managing-groups-&-classes/register-or-join-your-school).
+- **Student** — the student role has the most restricted access. They can only use the learning content of Projects.
+
+Each student in a class needs their own account to access the platform for tracking, management, and administrative purposes.

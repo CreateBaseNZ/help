@@ -21,12 +21,14 @@ const Error404: NextPage = () => {
             Sorry, the page you were looking for doesn&apos;t exist, has been
             removed, or is unavailable.
           </p>
-          <Link href="/" passHref>
-            <BorderButton
-              leftIcon="arrow_back"
-              label="Home"
-              className={classes.home}
-            />
+          <Link href="/">
+            <a>
+              <BorderButton
+                leftIcon="arrow_back"
+                label="Home"
+                className={classes.home}
+              />
+            </a>
           </Link>
         </div>
       </main>

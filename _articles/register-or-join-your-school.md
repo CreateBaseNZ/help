@@ -1,14 +1,32 @@
 ---
-title: "What are groups?"
+title: "Register or join your school"
 category: "managing-groups-&-classes"
-subcategory: "Introduction to groups"
-excerpt: "Find out how groups work on the CreateBase platform."
+subcategory: "School groups"
+excerpt: "Follow the simple steps below to register your school on the CreateBase app, or join an existing school group."
 ---
 
-To use the CreateBase platform you need to be part of a group. From the "My Account" tab, you can view all the groups your account has joined. A single CreateBase account can belong to multiple groups.
+## Register
 
-Groups can either be a learning institution (school/other) or a family (coming soon). School groups are managed by [admin accounts](/managing-groups-&-classes/school-group-roles) and must contain all of the teachers and students in your school who wish to use the platform.
+Registering your school starts by completing the registration form on the My Groups page.
 
-If you’re a **teacher**, learn how to register or join a school group [here](/managing-groups-&-classes/register-or-join-your-school) and how to add students to your group [here](/managing-groups-&-classes/adding-students).
+Each form is individually verified by our team to authenticate genuine schools on our Platform. Once a form is submitted, our team will get in touch via email within 24 hours to notify you of your school's registration. Upon confirmation, your school group will be formed and you will automatically become the [admin user](https://help.createbase.co.nz/managing-groups-&-classes/school-group-roles).
 
-If you’re a **student**, learn how to join a school group [here](/managing-groups-&-classes/register-or-join-your-school).
+During this time, please feel free to learn more about our platform from the Support tab or complete our Platform Onboarding. You can also experience the non-teaching aspects of Projects from the Browse tab.
+
+## Join
+
+### Joining as a teacher
+
+If your school has already been registered, you can simply join it by navigating to the [My Groups](https://app.createbase.co.nz/my-groups) page and clicking the `Join` button.
+
+![Join a school button on the My Groups tab](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school.jpg)
+
+You may attach a message with your join request, which will be seen by the admin (the user who registered your school) processing your request.
+
+![Join a school as a teacher](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-teacher.gif)
+
+### Joining as a student
+
+For students to join a school, they must use a student code.
+
+Learn how to add students to your school [here](https://help.createbase.co.nz/managing-groups-&-classes/add-students).

@@ -7,7 +7,6 @@ import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
-import markdownToHtml from "../../../lib/markdownToHtml";
 import { getAllSlugs, getArticleBySlug } from "../../../lib/api";
 
 import classes from "../../../styles/article.module.scss";
@@ -73,17 +72,10 @@ export async function getStaticProps({ params }: Params) {
     "slug",
     "content",
   ]);
-  const content = await markdownToHtml(article.content || "");
-
-  console.log("from get static props");
-  console.log(article);
 
   return {
     props: {
-      article: {
-        ...article,
-        content,
-      },
+      article: article,
     },
   };
 }

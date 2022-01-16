@@ -1,14 +1,26 @@
 ---
-title: "What are groups?"
+title: "Manage users in your school"
 category: "managing-groups-&-classes"
-subcategory: "Introduction to groups"
-excerpt: "Find out how groups work on the CreateBase platform."
+subcategory: "School groups"
+excerpt: "Learn how to add users to and remove users from your school group, including both teachers and students."
 ---
 
-To use the CreateBase platform you need to be part of a group. From the "My Account" tab, you can view all the groups your account has joined. A single CreateBase account can belong to multiple groups.
+To use the [Manage Users](https://app.createbase.co.nz/manage-users) tab, please note that you need to be an admin or a teacher in a group. Read more about the different school group roles [here](https://help.createbase.co.nz/managing-groups-&-classes/school-group-roles).
 
-Groups can either be a learning institution (school/other) or a family (coming soon). School groups are managed by [admin accounts](/managing-groups-&-classes/school-group-roles) and must contain all of the teachers and students in your school who wish to use the platform.
+In the Manage Users tab, you can view all the accounts that have joined your group.
 
-If you’re a **teacher**, learn how to register or join a school group [here](/managing-groups-&-classes/register-or-join-your-school) and how to add students to your group [here](/managing-groups-&-classes/adding-students).
+Users are grouped based on their role within the group: admin, teacher or student.
 
-If you’re a **student**, learn how to join a school group [here](/managing-groups-&-classes/register-or-join-your-school).
+![Manage users in the Manage Group tab](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/manage-users.gif)
+
+For all users, you can view their first name, last name, email and who invited them.
+
+On this page, **admins** can:
+
+- Remove teacher accounts
+- Remove student accounts
+- Promote teachers to admins
+
+On this page, **teachers** can:
+
+- Remove student accounts

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Crumb } from "../types/Crumb";
+import { CrumbT } from "../types/Crumb";
 import classes from "./Crumbs.module.scss";
 
 interface Props {
-  crumbs: Crumb[];
+  crumbs: CrumbT[];
   className?: string;
 }
 

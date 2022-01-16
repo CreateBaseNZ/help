@@ -1,14 +1,20 @@
 ---
-title: "What are groups?"
+title: "Adding students"
 category: "managing-groups-&-classes"
-subcategory: "Introduction to groups"
-excerpt: "Find out how groups work on the CreateBase platform."
+subcategory: "School groups"
+excerpt: "Add students to your school group in just a few steps."
 ---
 
-To use the CreateBase platform you need to be part of a group. From the "My Account" tab, you can view all the groups your account has joined. A single CreateBase account can belong to multiple groups.
+Adding students to your group is a requirement to teach on the platform. To do this students must:
 
-Groups can either be a learning institution (school/other) or a family (coming soon). School groups are managed by [admin accounts](/managing-groups-&-classes/school-group-roles) and must contain all of the teachers and students in your school who wish to use the platform.
+1. Create their own account\
+   ![Create an account](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-student.jpg)
 
-If you’re a **teacher**, learn how to register or join a school group [here](/managing-groups-&-classes/register-or-join-your-school) and how to add students to your group [here](/managing-groups-&-classes/adding-students).
+2. Open the [My Groups](https://app.createbase.co.nz/my-groups) tab and select `Join a group`\
+   ![Join a group on the My Groups tab](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-students.gif)
 
-If you’re a **student**, learn how to join a school group [here](/managing-groups-&-classes/register-or-join-your-school).
+3. Enter the student code
+
+You can find the student code for your group by clicking "Add" on the [Manage Group](https://app.createbase.co.nz/manage-group) page.
+
+![Student codes can be found in the Manage Group page](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/add-students-school.jpg)

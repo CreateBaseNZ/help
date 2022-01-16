@@ -9,7 +9,6 @@ export const getArticleSlugs = () => {
   return fs.readdirSync(articlesDirectory);
 };
 
-// TODO
 type Items = {
   [key: string]: string;
 };
@@ -22,7 +21,6 @@ export const getArticleBySlug = (slug: string, fields: string[] = []) => {
 
   const items: Items = {};
 
-  // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
       items[field] = realSlug;

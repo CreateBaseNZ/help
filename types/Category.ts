@@ -1,6 +1,6 @@
 import { ArticleT } from "./Article";
 
-export type ISubCategory = {
+type SubcategoryT = {
   title: string;
   articles: ArticleT[];
 };
@@ -11,5 +11,5 @@ export type CategoryT = {
   slug: string;
   description: string;
   featured: ArticleT[];
-  subcategories: ISubCategory[];
+  subcategories: SubcategoryT[];
 };

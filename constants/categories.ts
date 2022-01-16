@@ -14,7 +14,12 @@ const CATEGORIES: Categories = {
     icon: "groups",
     description:
       "Learn about all the features enabled by groups and classes—from registration to class integration.",
-    featured: ["what-are-groups"],
+    featured: [
+      "what-are-groups",
+      "register-or-join-your-school",
+      "adding-students",
+      "manage-users-in-your-school",
+    ],
     subcategories: ["Introduction to groups", "School groups"],
   },
   "teaching-&-learning-tools": {
