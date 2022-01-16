@@ -5,23 +5,12 @@ import CATEGORIES from "../../../constants/categories";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
-import { ICategory } from "../../../types/Category";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
 import markdownToHtml from "../../../lib/markdownToHtml";
 import { getAllSlugs, getArticleBySlug } from "../../../lib/api";
 
 import classes from "../../../styles/article.module.scss";
-
-const findArticle = (object: Object, string: string) => {
-  let result;
-  if (!object || typeof object !== "object") return;
-  Object.values(object).some((v) => {
-    if (v === string) return (result = object);
-    return (result = findArticle(v, string));
-  });
-  return result;
-};
 
 interface Props {
   article: IArticle;

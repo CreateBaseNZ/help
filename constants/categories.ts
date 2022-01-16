@@ -4,6 +4,10 @@ type Categories = {
     icon: string;
     description: string;
     featured: string[];
+    subcategories: {
+      title: string;
+      articles: string[];
+    }[];
   };
 };
 
@@ -14,6 +18,21 @@ const CATEGORIES: Categories = {
     description:
       "Learn about all the features enabled by groups and classes—from registration to class integration.",
     featured: ["what-are-groups"],
+    subcategories: [
+      {
+        title: "Introduction to groups",
+        articles: ["what-are-groups"],
+      },
+      {
+        title: "School groups",
+        articles: [
+          "school-group-roles",
+          "register-or-join-your-school",
+          "adding-students",
+          "manage-users-in-your-school",
+        ],
+      },
+    ],
   },
 };
 

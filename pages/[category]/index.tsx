@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -7,34 +5,47 @@ import Header from "../../components/Header";
 import CATEGORIES from "../../constants/categories";
 import Footer from "../../components/Footer";
 import H1 from "../../components/H1";
-import { ICategory } from "../../types/Category";
 import Crumbs from "../../components/Crumbs";
 
 import classes from "../../styles/category.module.scss";
+import { getArticleBySlug } from "../../lib/api";
 
-const Category: NextPage = () => {
+type BasicArticle = {
+  title: string;
+  slug: string;
+};
+
+interface Props {
+  category: {
+    title: string;
+    description: string;
+    icon: string;
+    slug: string;
+    featured: BasicArticle[];
+    subcategories: {
+      title: string;
+      articles: BasicArticle[];
+    }[];
+  };
+}
+
+const Category = ({ category }: Props) => {
   const router = useRouter();
-  const [data, setData] = useState<ICategory>();
 
-  useEffect(() => {
-    if (!router.isReady) return;
-    const data = CATEGORIES.find((category) => category.url === router.asPath);
-    if (data) {
-      setData(data);
-    } else {
-      router.push("/404");
-    }
-  }, [router]);
+  console.log(category);
 
-  if (!data) return null;
+  if (!router.isFallback && !category?.slug) {
+    router.replace("/404");
+    return null;
+  }
 
   return (
     <div className={classes.page}>
       <Head>
-        <title>{data.title}</title>
+        <title>{category.title}</title>
         <meta
           name="description"
-          content={`${data.description} Read ${data.featured
+          content={`${category.description} Read ${category.featured
             .map((article) => article.title)
             .join(", ")}. CreateBase Help Center.`}
         />
@@ -42,17 +53,22 @@ const Category: NextPage = () => {
       </Head>
       <Header />
       <main className={classes.main}>
-        <Crumbs crumbs={[{ url: data.url, title: data.title }]} />
+        <Crumbs
+          crumbs={[{ url: `/${category.slug}`, title: category.title }]}
+        />
         <div className={classes.h1}>
-          <i className="material-icons-outlined">{data.icon}</i>
-          <H1>{data.title}</H1>
+          <i className="material-icons-outlined">{category.icon}</i>
+          <H1>{category.title}</H1>
         </div>
-        {data.subcategories.map((subcategory) => (
+        {category.subcategories.map((subcategory) => (
           <section key={subcategory.title} className={classes.container}>
             <h2 className={classes.h2}>{subcategory.title}</h2>
             <div className={classes.wrapper}>
               {subcategory.articles.map((article) => (
-                <Link key={article.url} href={`${data.url}${article.url}`}>
+                <Link
+                  key={article.slug}
+                  href={`/${category.slug}/${article.slug}`}
+                >
                   <a className={classes.article} title={article.title}>
                     {article.title}
                   </a>
@@ -68,3 +84,44 @@ const Category: NextPage = () => {
 };
 
 export default Category;
+
+interface Params {
+  params: {
+    category: string;
+  };
+}
+
+export async function getStaticProps({ params }: Params) {
+  return {
+    props: {
+      category: {
+        ...CATEGORIES[params.category],
+        slug: params.category,
+        featured: CATEGORIES[params.category].featured.map((article) =>
+          getArticleBySlug(article, ["title", "slug"])
+        ),
+        subcategories: CATEGORIES[params.category].subcategories.map(
+          (subcategory) => ({
+            ...subcategory,
+            articles: subcategory.articles.map((article) =>
+              getArticleBySlug(article, ["title", "slug"])
+            ),
+          })
+        ),
+      },
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: Object.keys(CATEGORIES).map((key) => {
+      return {
+        params: {
+          category: key,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
