@@ -1,13 +1,13 @@
 import SCHOOL_GROUP_ROLES from "../articles/school-group-roles";
 import MANAGE_USERS_IN_YOUR_SCHOOL from "../articles/manage-users-in-your-school";
 import WHAT_ARE_GROUPS from "../articles/what-are-groups";
-import { Category } from "../types/Category";
+import { ICategory } from "../types/Category";
 import REGISTER_OR_JOIN_YOUR_SCHOOL from "../articles/register-or-join-your-school";
 import ADDING_STUDENTS from "../articles/adding-students";
 
 // TODO descriptions
 
-const CATEGORIES: Category[] = [
+const CATEGORIES: ICategory[] = [
   {
     title: "Managing groups & classes",
     icon: "groups",

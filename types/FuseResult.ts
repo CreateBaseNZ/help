@@ -1,7 +1,7 @@
-import { Crumb } from "../components/Crumbs";
-import { Article } from "./Article";
+import { IArticle } from "./Article";
+import { Crumb } from "./Crumb";
 
-export interface FuseResult extends Article {
+export interface IFuseResult extends IArticle {
   plain: string;
   trail: Crumb[];
 }

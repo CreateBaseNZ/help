@@ -1,8 +1,8 @@
 import Link from "next/link";
 import ArticleImage from "../components/ArticleImage";
-import { Article } from "../types/Article";
+import { IArticle } from "../types/Article";
 
-const MANAGE_USERS_IN_YOUR_SCHOOL: Article = {
+const MANAGE_USERS_IN_YOUR_SCHOOL: IArticle = {
   title: "Manage users in your school",
   url: "/manage-users-in-your-school",
   blurb:

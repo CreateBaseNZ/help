@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export interface Article {
+export interface IArticle {
   title: string;
   url: string;
   blurb: string;

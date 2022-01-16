@@ -10,7 +10,7 @@ import Header from "../components/Header";
 import Resources from "../components/Resources";
 import FUSE_DATA from "../constants/fuse_data";
 import Results from "../components/Results";
-import { FuseResult } from "../types/FuseResult";
+import { IFuseResult } from "../types/FuseResult";
 
 import classes from "../styles/index.module.scss";
 
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       keys: ["title", "blurb", "plain"],
     })
   );
-  const [results, setResults] = useState<Fuse.FuseResult<FuseResult>[] | null>(
+  const [results, setResults] = useState<Fuse.FuseResult<IFuseResult>[] | null>(
     null
   );
 

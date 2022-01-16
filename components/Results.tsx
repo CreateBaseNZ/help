@@ -2,13 +2,13 @@ import Fuse from "fuse.js";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { RefObject } from "react";
-import { FuseResult } from "../types/FuseResult";
+import { IFuseResult } from "../types/FuseResult";
 import Crumbs from "./Crumbs";
 import classes from "./Results.module.scss";
 
 interface Props {
   searchRef: RefObject<HTMLInputElement>;
-  results: Fuse.FuseResult<FuseResult>[];
+  results: Fuse.FuseResult<IFuseResult>[];
 }
 
 const Results = ({ searchRef, results }: Props): JSX.Element => {

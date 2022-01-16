@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { FuseResult } from "../types/FuseResult";
+import { IFuseResult } from "../types/FuseResult";
 import CATEGORIES from "./categories";
 
 const extractText = (elem: ReactElement | string): string => {
@@ -16,7 +16,7 @@ const extractText = (elem: ReactElement | string): string => {
   return extractText(children);
 };
 
-const FUSE_DATA: FuseResult[] = CATEGORIES.map((category) =>
+const FUSE_DATA: IFuseResult[] = CATEGORIES.map((category) =>
   category.subcategories.map((subcategory) =>
     subcategory.articles.map((article) => ({
       ...article,

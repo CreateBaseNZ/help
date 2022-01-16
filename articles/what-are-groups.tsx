@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Article } from "../types/Article";
+import { IArticle } from "../types/Article";
 
-const WHAT_ARE_GROUPS: Article = {
+const WHAT_ARE_GROUPS: IArticle = {
   title: "What are groups?",
   url: "/what-are-groups",
   blurb: "Find out how groups work on the CreateBase platform.",

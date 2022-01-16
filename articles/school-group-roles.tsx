@@ -1,6 +1,6 @@
-import { Article } from "../types/Article";
+import { IArticle } from "../types/Article";
 
-const SCHOOL_GROUP_ROLES: Article = {
+const SCHOOL_GROUP_ROLES: IArticle = {
   title: "School group roles",
   blurb: "A short explanation of the three roles within school groups.",
   url: "/school-group-roles",

@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Article } from "../../../types/Article";
+import { IArticle } from "../../../types/Article";
 
 import classes from "../../../styles/article.module.scss";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ import CATEGORIES from "../../../constants/categories";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
-import { Category } from "../../../types/Category";
+import { ICategory } from "../../../types/Category";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
 
@@ -25,8 +25,8 @@ const findArticle = (object: Object, string: string) => {
 
 const Article: NextPage = () => {
   const router = useRouter();
-  const [data, setData] = useState<Article>();
-  const [category, setCategory] = useState<Category>();
+  const [data, setData] = useState<IArticle>();
+  const [category, setCategory] = useState<ICategory>();
 
   useEffect(() => {
     if (!router.isReady) return;

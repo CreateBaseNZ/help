@@ -7,14 +7,14 @@ import Header from "../../components/Header";
 import CATEGORIES from "../../constants/categories";
 import Footer from "../../components/Footer";
 import H1 from "../../components/H1";
-import { Category } from "../../types/Category";
+import { ICategory } from "../../types/Category";
 import Crumbs from "../../components/Crumbs";
 
 import classes from "../../styles/category.module.scss";
 
 const Category: NextPage = () => {
   const router = useRouter();
-  const [data, setData] = useState<Category>();
+  const [data, setData] = useState<ICategory>();
 
   useEffect(() => {
     if (!router.isReady) return;
