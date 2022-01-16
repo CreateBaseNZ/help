@@ -1,10 +1,8 @@
 ---
 title: "What are groups?"
 category: "managing-groups-&-classes"
+subcategory: "Introduction to groups"
 excerpt: "Find out how groups work on the CreateBase platform."
-date: "2020-03-16T05:35:07.322Z"
-author:
-  name: JJ Kasper
 ---
 
 To use the CreateBase platform you need to be part of a group. From the "My Account" tab, you can view all the groups your account has joined. A single CreateBase account can belong to multiple groups.

@@ -1,5 +1,4 @@
 import Fuse from "fuse.js";
-import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
@@ -8,23 +7,34 @@ import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Resources from "../components/Resources";
-import FUSE_DATA from "../constants/fuse_data";
 import Results from "../components/Results";
-import { IFuseResult } from "../types/FuseResult";
 
 import classes from "../styles/index.module.scss";
+import { getAllSlugs, getCategoryBySlug } from "../lib/api";
+import CATEGORIES from "../constants/categories";
+import { CategoryT } from "../types/Category";
+import { ArticleT } from "../types/Article";
+import PRIMARY_FIELDS from "../constants/primary_fields";
 
-const Home: NextPage = () => {
+interface Props {
+  categories: CategoryT[];
+  fuseData: ArticleT[];
+}
+
+const Home = ({ categories, fuseData }: Props) => {
   const router = useRouter();
   const searchRef = useRef<HTMLInputElement>(null);
   const [fuse] = useState(
-    new Fuse(FUSE_DATA, {
-      keys: ["title", "blurb", "plain"],
+    new Fuse(fuseData, {
+      keys: PRIMARY_FIELDS,
     })
   );
-  const [results, setResults] = useState<Fuse.FuseResult<IFuseResult>[] | null>(
+  const [results, setResults] = useState<Fuse.FuseResult<ArticleT>[] | null>(
     null
   );
+
+  console.log(categories);
+  console.log(fuseData);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -49,7 +59,7 @@ const Home: NextPage = () => {
       <Header />
       <main className={classes.main}>
         <Banner searchRef={searchRef} results={results !== null} />
-        {!results && <Categories />}
+        {!results && <Categories categories={categories} />}
         {!results && <Resources />}
         {results && <Results searchRef={searchRef} results={results} />}
       </main>
@@ -59,3 +69,14 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  return {
+    props: {
+      categories: Object.keys(CATEGORIES).map((key) =>
+        getCategoryBySlug(key, ["title", "slug", "subcategory"])
+      ),
+      fuseData: getAllSlugs(PRIMARY_FIELDS),
+    },
+  };
+}

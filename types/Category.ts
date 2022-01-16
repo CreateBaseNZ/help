@@ -1,15 +1,15 @@
-import { IArticle } from "./Article";
+import { ArticleT } from "./Article";
 
 export type ISubCategory = {
   title: string;
-  articles: IArticle[];
+  articles: ArticleT[];
 };
 
-export type ICategory = {
+export type CategoryT = {
   title: string;
   icon: string;
-  url: string;
+  slug: string;
   description: string;
-  featured: IArticle[];
+  featured: ArticleT[];
   subcategories: ISubCategory[];
 };

@@ -8,7 +8,7 @@ import H1 from "../../components/H1";
 import Crumbs from "../../components/Crumbs";
 
 import classes from "../../styles/category.module.scss";
-import { getArticleBySlug } from "../../lib/api";
+import { getCategoryBySlug } from "../../lib/api";
 
 type BasicArticle = {
   title: string;
@@ -94,21 +94,11 @@ interface Params {
 export async function getStaticProps({ params }: Params) {
   return {
     props: {
-      category: {
-        ...CATEGORIES[params.category],
-        slug: params.category,
-        featured: CATEGORIES[params.category].featured.map((article) =>
-          getArticleBySlug(article, ["title", "slug"])
-        ),
-        subcategories: CATEGORIES[params.category].subcategories.map(
-          (subcategory) => ({
-            ...subcategory,
-            articles: subcategory.articles.map((article) =>
-              getArticleBySlug(article, ["title", "slug"])
-            ),
-          })
-        ),
-      },
+      category: getCategoryBySlug(params.category, [
+        "title",
+        "slug",
+        "subcategory",
+      ]),
     },
   };
 }

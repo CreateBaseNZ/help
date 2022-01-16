@@ -1,9 +1,5 @@
-import { ReactElement } from "react";
+import PRIMARY_FIELDS from "../constants/primary_fields";
 
-export interface IArticle {
-  title: string;
-  category: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-}
+export type ArticleT = {
+  [K in typeof PRIMARY_FIELDS[number]]: string;
+};

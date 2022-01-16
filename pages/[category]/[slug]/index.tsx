@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { IArticle } from "../../../types/Article";
+import { ArticleT } from "../../../types/Article";
 import { useRouter } from "next/router";
 import CATEGORIES from "../../../constants/categories";
 import Footer from "../../../components/Footer";
@@ -13,7 +13,7 @@ import { getAllSlugs, getArticleBySlug } from "../../../lib/api";
 import classes from "../../../styles/article.module.scss";
 
 interface Props {
-  article: IArticle;
+  article: ArticleT;
 }
 
 const Article = ({ article }: Props) => {
