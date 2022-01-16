@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CATEGORIES from "../constants/categories";
 import { CategoryT } from "../types/Category";
 import BorderButton from "./BorderButton";
 

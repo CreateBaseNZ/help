@@ -14,8 +14,6 @@ interface Props {
 const NavMobile = ({ showNavMobile, setShowNavMobile }: Props): JSX.Element => {
   const router = useRouter();
 
-  console.log(router.asPath);
-
   return (
     <div
       className={`${classes.container} ${showNavMobile ? classes.show : ""}`}
