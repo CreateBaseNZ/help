@@ -1,19 +1,20 @@
 import Head from "next/head";
-import { ArticleT } from "../../../types/Article";
 import { useRouter } from "next/router";
-import CATEGORIES from "../../../constants/categories";
+import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+import remarkUnwrapImages from "remark-unwrap-images";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
-import ReactMarkdown from "react-markdown";
-import { getAllSlugs, getArticleBySlug } from "../../../lib/api";
-
-import classes from "../../../styles/article.module.scss";
-import Link from "next/link";
 import ArticleImage from "../../../components/ArticleImage";
-import remarkUnwrapImages from "remark-unwrap-images";
+
+import { getAllSlugs, getArticleBySlug } from "../../../lib/api";
+import { ArticleT } from "../../../types/Article";
+import CATEGORIES from "../../../constants/categories";
+import PRIMARY_FIELDS from "../../../constants/primary_fields";
+import classes from "../../../styles/article.module.scss";
 
 interface Props {
   article: ArticleT;
@@ -52,8 +53,7 @@ const Article = ({ article }: Props) => {
           ]}
         />
         <H1>{article.title}</H1>
-        <div className={classes.blurb}>{article.excerpt}</div>
-        <article className={classes.article}>{article.content}</article>
+        <div className={classes.excerpt}>{article.excerpt}</div>
         <ReactMarkdown
           className={classes.article}
           components={{
@@ -91,12 +91,7 @@ interface Params {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const article = getArticleBySlug(params.slug, [
-    "title",
-    "category",
-    "slug",
-    "content",
-  ]);
+  const article = getArticleBySlug(params.slug, PRIMARY_FIELDS);
 
   return {
     props: {

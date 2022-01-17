@@ -17,7 +17,7 @@ During this time, please feel free to learn more about our platform from the Sup
 
 ### Joining as a teacher
 
-If your school has already been registered, you can simply join it by navigating to the [My Groups](https://app.createbase.co.nz/my-groups) page and clicking the `Join` button.
+If your school has already been registered, you can simply join it by navigating to the [My Groups](https://app.createbase.co.nz/my-groups) page and clicking the "**Join**" button.
 
 ![Join a school button on the My Groups tab](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school.jpg)
 
