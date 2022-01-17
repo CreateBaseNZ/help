@@ -7,10 +7,12 @@ excerpt: "Add students to your school group in just a few steps."
 
 Adding students to your group is a requirement to teach on the platform. To do this students must:
 
-1. Create their own account\
+1. Create their own account
+
    ![Create an account](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-student.jpg)
 
-2. Open the [My Groups](https://app.createbase.co.nz/my-groups) tab and select `Join a group`\
+2. Open the [My Groups](https://app.createbase.co.nz/my-groups) tab and select `Join a group`
+
    ![Join a group on the My Groups tab](https://raw.githubusercontent.com/CreateBaseNZ/public/dev/support/join-school-students.gif)
 
 3. Enter the student code

@@ -15,10 +15,6 @@ interface Props {
 const Results = ({ searchRef, results }: Props): JSX.Element => {
   const router = useRouter();
 
-  console.log(results);
-  console.log(CATEGORIES);
-  console.log(CATEGORIES[results[0].item.category].title);
-
   const clearHandler = () => {
     router.push("/");
     if (searchRef.current) searchRef.current.value = "";

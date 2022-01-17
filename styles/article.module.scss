@@ -55,12 +55,15 @@
   p {
     margin: 0.5em 0;
   }
-  b {
+  strong {
     font-weight: 600;
   }
   a {
+    cursor: pointer;
     color: $blue-mid;
+    transition: color 0.1s ease-out;
     &:hover {
+      color: $blue-dark;
       text-decoration: underline;
     }
   }

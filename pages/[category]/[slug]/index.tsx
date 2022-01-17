@@ -7,9 +7,13 @@ import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
 import H1 from "../../../components/H1";
 import Review from "../../../components/Review";
+import ReactMarkdown from "react-markdown";
 import { getAllSlugs, getArticleBySlug } from "../../../lib/api";
 
 import classes from "../../../styles/article.module.scss";
+import Link from "next/link";
+import ArticleImage from "../../../components/ArticleImage";
+import remarkUnwrapImages from "remark-unwrap-images";
 
 interface Props {
   article: ArticleT;
@@ -50,6 +54,27 @@ const Article = ({ article }: Props) => {
         <H1>{article.title}</H1>
         <div className={classes.blurb}>{article.excerpt}</div>
         <article className={classes.article}>{article.content}</article>
+        <ReactMarkdown
+          className={classes.article}
+          components={{
+            a: ({ children, href }) =>
+              href?.startsWith("/") ? (
+                <Link href={`${href}`}>
+                  <a title={href}>{children}</a>
+                </Link>
+              ) : (
+                <a href={href} title={href} target="_blank" rel="noreferrer">
+                  {children}
+                </a>
+              ),
+            img: ({ alt, src }) => (
+              <ArticleImage src={src as string} alt={alt as string} />
+            ),
+          }}
+          remarkPlugins={[remarkUnwrapImages]}
+        >
+          {article.content}
+        </ReactMarkdown>
         <Review />
       </main>
       <Footer />
@@ -83,7 +108,6 @@ export async function getStaticProps({ params }: Params) {
 export async function getStaticPaths() {
   return {
     paths: getAllSlugs(["category", "slug"]).map((article) => {
-      console.log(article);
       return {
         params: {
           category: article.category,

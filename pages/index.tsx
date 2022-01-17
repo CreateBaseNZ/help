@@ -33,9 +33,6 @@ const Home = ({ categories, fuseData }: Props) => {
     null
   );
 
-  console.log(categories);
-  console.log(fuseData);
-
   useEffect(() => {
     if (!router.isReady) return;
     if (router.query.search) {

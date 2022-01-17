@@ -7,7 +7,7 @@ interface Props extends ImageProps {
 
 const ArticleImage = ({ alt, ...rest }: Props): JSX.Element => {
   return (
-    <div className={classes.container}>
+    <figure className={classes.container}>
       <div className={classes.wrapper}>
         <Image
           alt={alt}
@@ -17,7 +17,7 @@ const ArticleImage = ({ alt, ...rest }: Props): JSX.Element => {
           {...rest}
         />
       </div>
-    </div>
+    </figure>
   );
 };
 

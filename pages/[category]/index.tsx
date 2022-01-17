@@ -32,8 +32,6 @@ interface Props {
 const Category = ({ category }: Props) => {
   const router = useRouter();
 
-  console.log(category);
-
   if (!router.isFallback && !category?.slug) {
     router.replace("/404");
     return null;
