@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CreateBase Help Center
 
-## Getting Started
+This is the codebase for the [CreateBase Help Center](https://help.createbase.co.nz).
 
-First, run the development server:
+The documentation here is intended to guide content authors or external collaborators in contributing or editing existing resources.
 
-```bash
-npm run dev
-# or
-yarn dev
+## Overview
+
+The Help Center consists primarily of two types of documents:
+
+- Articles - concise and short-form guides and tutorials that focus on certain features or jobs-to-be-done
+- Resources - richer documents with features TBD
+
+## Articles
+
+Articles are written in [Markdown](https://www.markdownguide.org/) files using the Markdown syntax. In short, Markdown is a type of markup language that is simple and easy to use, while offering rich formatting options. But perhaps most importantly, anyone can learn it within a day and at it's core, helps scale information-dense websites.
+
+Markdown files have a `.md` extension and is widely supported. For example, if you're reading this on GitHub, you'll be seeing a nicely formatted document instead of a plain text file (which is all the Markdown files really are - a text file with a bit extra).
+
+Within this repository, articles are stored in the `/_articles` directory. If you view the files using GitHub, they will be formatted nicely (with GitHub Flavored Markdown). Of course, they look different when viewed in the Help Center, but GitHub provides an adequate preview while editing or pre-shipping.
+
+All articles begin with a front-matter - a block containing metadata and parameters about the article. They look something like this:
+
+```txt
+---
+title: "Article title"
+category: "name-of-the-category"
+subcategory: "Name of the subcategory"
+excerpt: "A short blurb of the article."
+---
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Each field in the front-matter follow certain conventions:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- `title` - capitalise only the first word and nouns
+- `category` - kebab-case matching the category URL
+- `subcategory` - name of subcategory the article belongs to
+- `excerpt` - should be brief and grammatically correct (including a full stop at the end of all sentences)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+> 🚨 **Note**  
+> Article files should also be named in kebab-case and will be the URL query of the article.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The body of the article is simply a regular Markdown file.
 
-## Learn More
+> 💡 **Hint**  
+> Use this [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) for a quick reference to the Markdown syntax.
 
-To learn more about Next.js, take a look at the following resources:
+## Resources
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👀 Coming soon!
