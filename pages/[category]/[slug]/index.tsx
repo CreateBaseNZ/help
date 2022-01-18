@@ -4,6 +4,8 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkUnwrapImages from "remark-unwrap-images";
 import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
@@ -58,8 +60,14 @@ const Article = ({ article }: Props) => {
         <ReactMarkdown
           className={classes.article}
           components={{
-            a: ({ children, href }) =>
-              href?.startsWith("/") ? (
+            a: ({ children, href, tabIndex, node }) => {
+              if (tabIndex === -1)
+                return (
+                  <a href={node?.properties?.href as string}>
+                    <i className="material-icons-outlined">link</i>
+                  </a>
+                );
+              return href?.startsWith("/") ? (
                 <Link href={`${href}`}>
                   <a title={href}>{children}</a>
                 </Link>
@@ -67,7 +75,8 @@ const Article = ({ article }: Props) => {
                 <a href={href} title={href} target="_blank" rel="noreferrer">
                   {children}
                 </a>
-              ),
+              );
+            },
             img: ({ alt, src }) => (
               <ArticleImage src={src as string} alt={alt as string} />
             ),
@@ -82,18 +91,15 @@ const Article = ({ article }: Props) => {
             tbody: ({ children }) => (
               <div className={classes.tbody}>{children}</div>
             ),
-            tr: ({ children, ...rest }) => {
-              console.log(rest, children);
-              return <div className={classes.tr}>{children}</div>;
-            },
-            th: ({ children, style, ...rest }) => {
-              console.log(rest, children);
-              return (
-                <div className={classes.th} style={style}>
-                  {children}
-                </div>
-              );
-            },
+            tr: ({ children, ...rest }) => (
+              <div className={classes.tr}>{children}</div>
+            ),
+            th: ({ children, style, ...rest }) => (
+              <div className={classes.th} style={style}>
+                {children}
+              </div>
+            ),
+
             td: ({ children, style }) => (
               <div className={classes.td} style={style}>
                 {children}
@@ -104,6 +110,7 @@ const Article = ({ article }: Props) => {
             remarkUnwrapImages,
             [remarkGfm, { singleTilde: false }],
           ]}
+          rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
         >
           {article.content}
         </ReactMarkdown>

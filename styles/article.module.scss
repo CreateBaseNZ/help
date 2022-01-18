@@ -45,6 +45,29 @@ $table-border-color: #eeeeee;
     font-weight: 600;
     margin: 0.75em 0 0.5em 0;
   }
+  h2,
+  h3,
+  h4,
+  h5 {
+    position: relative;
+    a {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-100%, -50%) rotate(-45deg);
+      padding: 0 0.25rem;
+      transition: opacity 0.1s ease-out;
+      i {
+        font-size: 1.5em;
+      }
+    }
+    &:hover {
+      a {
+        opacity: 0.25;
+      }
+    }
+  }
   ol,
   ul {
     margin: 0.25em 0 0.5em 1.5em;
