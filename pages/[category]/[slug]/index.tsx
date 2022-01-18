@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkUnwrapImages from "remark-unwrap-images";
+import remarkGfm from "remark-gfm";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Crumbs from "../../../components/Crumbs";
@@ -70,8 +71,39 @@ const Article = ({ article }: Props) => {
             img: ({ alt, src }) => (
               <ArticleImage src={src as string} alt={alt as string} />
             ),
+            table: ({ children }) => (
+              <div className={`${classes.tableContainer} roundScrollbar`}>
+                <div className={classes.table}>{children}</div>
+              </div>
+            ),
+            thead: ({ children }) => (
+              <div className={classes.thead}>{children}</div>
+            ),
+            tbody: ({ children }) => (
+              <div className={classes.tbody}>{children}</div>
+            ),
+            tr: ({ children, ...rest }) => {
+              console.log(rest, children);
+              return <div className={classes.tr}>{children}</div>;
+            },
+            th: ({ children, style, ...rest }) => {
+              console.log(rest, children);
+              return (
+                <div className={classes.th} style={style}>
+                  {children}
+                </div>
+              );
+            },
+            td: ({ children, style }) => (
+              <div className={classes.td} style={style}>
+                {children}
+              </div>
+            ),
           }}
-          remarkPlugins={[remarkUnwrapImages]}
+          remarkPlugins={[
+            remarkUnwrapImages,
+            [remarkGfm, { singleTilde: false }],
+          ]}
         >
           {article.content}
         </ReactMarkdown>

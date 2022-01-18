@@ -1,5 +1,7 @@
 @import "/styles/variables";
 
+$table-border-color: #eeeeee;
+
 .page {
   height: 100%;
   width: 100%;
@@ -71,6 +73,55 @@
   iframe {
     margin: 1em 0 0.5em 0;
     align-self: center;
+  }
+  del {
+    text-decoration: line-through;
+  }
+}
+
+.tableContainer {
+  width: 100%;
+  align-self: center;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.table {
+  min-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: thin solid $table-border-color;
+  .thead {
+    width: 100%;
+    display: flex;
+    border-bottom: thin solid $table-border-color;
+  }
+  .tbody {
+    display: flex;
+    flex-direction: column;
+  }
+  .tr {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      border-bottom: thin solid $table-border-color;
+    }
+    &:nth-child(2n) {
+      background: #fafafa;
+    }
+  }
+  .th,
+  .td {
+    padding: 0.2em 1em;
+    flex: 1;
+    &:not(:last-child) {
+      border-right: thin solid $table-border-color;
+    }
+  }
+  .th {
+    font-weight: 600;
   }
 }
 
