@@ -18,6 +18,7 @@ import { ArticleT } from "../../../types/Article";
 import CATEGORIES from "../../../constants/categories";
 import PRIMARY_FIELDS from "../../../constants/primary_fields";
 import classes from "../../../styles/article.module.scss";
+import remarkToc from "remark-toc";
 
 interface Props {
   article: ArticleT;
@@ -67,11 +68,17 @@ const Article = ({ article }: Props) => {
                     <i className="material-icons-outlined">link</i>
                   </a>
                 );
-              return href?.startsWith("/") ? (
-                <Link href={`${href}`}>
-                  <a title={href}>{children}</a>
-                </Link>
-              ) : (
+              if (href?.startsWith("#"))
+                return (
+                  <a href={node?.properties?.href as string}>{children}</a>
+                );
+              if (href?.startsWith("/"))
+                return (
+                  <Link href={`${href}`}>
+                    <a title={href}>{children}</a>
+                  </Link>
+                );
+              return (
                 <a href={href} title={href} target="_blank" rel="noreferrer">
                   {children}
                 </a>
@@ -109,6 +116,7 @@ const Article = ({ article }: Props) => {
           remarkPlugins={[
             remarkUnwrapImages,
             [remarkGfm, { singleTilde: false }],
+            remarkToc,
           ]}
           rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
         >
